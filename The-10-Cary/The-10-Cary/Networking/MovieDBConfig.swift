@@ -13,8 +13,8 @@ struct MovieDBConfig {
    var posterSizes: [String]?
 
    init() {
-      self.baseURL = ""
-      self.posterSizes = []
+      self.baseURL = nil
+      self.posterSizes = nil
    }
 
    init?(json: [String: Any]) {
