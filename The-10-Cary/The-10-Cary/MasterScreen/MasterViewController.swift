@@ -11,6 +11,7 @@ import UIKit
 class MasterViewController: UIViewController {
 
    @IBOutlet weak var collectionView: UICollectionView!
+   @IBOutlet weak var segmentedControl: UISegmentedControl!
    var moviedbConfig = MovieDBConfig()
    var imageCache = [String: UIImage?]()
    var movies = [Movie]()
@@ -25,11 +26,15 @@ class MasterViewController: UIViewController {
       super.viewWillAppear(animated)
       loadConfig()
       loadMovies(urlToLoad: nil)
+      configureSegmentedControl()
    }
 
    override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
       configureLayout()
+   }
+
+   @IBAction func didChooseMovieType(_ sender: Any) {
    }
 
    private func loadConfig() {
@@ -79,6 +84,12 @@ class MasterViewController: UIViewController {
          )
          flowLayout.minimumLineSpacing = CGFloat(20.0)
       }
+   }
+
+   private func configureSegmentedControl() {
+      let font = UIFont.boldSystemFont(ofSize: 18)
+      segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+      segmentedControl.layer.cornerRadius = 0.0
    }
 
    private func loadImage(for movie: Movie, into cell: MovieCell) {

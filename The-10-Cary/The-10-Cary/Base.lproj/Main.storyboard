@@ -19,12 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kpj-qy-aqH">
-                                <rect key="frame" x="91" y="32" width="193" height="29"/>
+                                <rect key="frame" x="20" y="32" width="335" height="29"/>
                                 <segments>
                                     <segment title="Now Playing"/>
-                                    <segment title="Coming Soon"/>
+                                    <segment title="Upcoming"/>
                                 </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="1" green="0.96593327129999995" blue="0.65027774989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="didChooseMovieType:" destination="BYZ-38-t0r" eventType="valueChanged" id="5wR-MS-APT"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o37-58-fjf">
                                 <rect key="frame" x="0.0" y="71" width="375" height="567"/>
@@ -78,9 +81,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="kpj-qy-aqH" secondAttribute="bottom" constant="-40" id="1W9-74-3ib"/>
                             <constraint firstItem="o37-58-fjf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="57Q-zU-XEn"/>
                             <constraint firstItem="o37-58-fjf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="RqU-no-Iou"/>
-                            <constraint firstItem="kpj-qy-aqH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YzC-bR-Rjv"/>
+                            <constraint firstItem="kpj-qy-aqH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="URv-X4-b5E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o37-58-fjf" secondAttribute="bottom" constant="149" id="ZaR-J1-E6V"/>
                             <constraint firstItem="o37-58-fjf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.85" id="amO-eb-th9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kpj-qy-aqH" secondAttribute="trailing" constant="20" id="ivb-Xj-fcz"/>
                             <constraint firstAttribute="trailing" secondItem="o37-58-fjf" secondAttribute="trailing" id="spM-M5-vkf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -92,6 +96,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="o37-58-fjf" id="28S-9u-rkS"/>
+                        <outlet property="segmentedControl" destination="kpj-qy-aqH" id="rKx-qh-k7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
