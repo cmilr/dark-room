@@ -112,7 +112,7 @@ class MasterViewController: UIViewController {
          let posterPath = movie.posterPath else {
             return
       }
-
+      
       var urlString = baseURL + size + posterPath
       let insertIndex = urlString.index(urlString.startIndex, offsetBy: 4)
       urlString.insert(Character("s"), at: insertIndex)
@@ -129,6 +129,17 @@ class MasterViewController: UIViewController {
             DispatchQueue.main.async { [] in
                cell.movieImageView.transition(toImage: image)
             }
+         }
+      }
+   }
+
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "showMovieDetail"{
+         if let detailPage = segue.destination as? DetailViewController,
+            let selectedCell = sender as? MovieCell,
+               let indexPath = collectionView?.indexPath(for: selectedCell) {
+            let movie = movies[indexPath.row]
+            detailPage.movie = movie
          }
       }
    }
