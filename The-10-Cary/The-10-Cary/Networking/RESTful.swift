@@ -8,7 +8,7 @@
 
 import Foundation
 
-class REST {
+class RESTful {
 
    public static func request(path: String, method: String, parameters: [String:String]?, headers: [String:String]?, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
       guard var components = URLComponents(string: path) else {
