@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MasterViewController" customModule="The_10_Cary" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kpj-qy-aqH">
@@ -40,7 +40,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="x51-T1-6DX" customClass="MovieCell" customModule="The_10_Cary" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="88.5" width="312" height="390"/>
+                                        <rect key="frame" x="20" y="88.666666666666671" width="312" height="390"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="312" height="390"/>
@@ -71,6 +71,7 @@
                                         <connections>
                                             <outlet property="movieImageView" destination="lde-Bg-Bin" id="qOU-GU-v3T"/>
                                             <outlet property="movieTitleLabel" destination="COx-6t-p97" id="k5p-Hv-G2j"/>
+                                            <segue destination="T2v-P5-2XC" kind="presentation" identifier="showMovieDetail" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="ps0-Fc-Rgc"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -102,6 +103,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="132.68365817091455"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ElX-hP-WQs">
+            <objects>
+                <viewController id="T2v-P5-2XC" customClass="DetailViewController" customModule="The_10_Cary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="5q3-vI-HcK" userLabel="View">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="pck-NK-Ys5" userLabel="GradientView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1eb-Oz-Tjk">
+                                        <rect key="frame" x="16" y="20" width="374" height="696"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="la4-97-qHN">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="348"/>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ri-BF-M91" userLabel="LabelContainer">
+                                                <rect key="frame" x="0.0" y="348" width="374" height="348"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P00-UO-R36">
+                                                        <rect key="frame" x="20" y="20" width="334" height="308"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Overview">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" metaFont="system" size="19"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.42745098039215684" green="0.28235294117647058" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="P00-UO-R36" secondAttribute="trailing" constant="20" id="3jp-FN-GTL"/>
+                                                    <constraint firstItem="P00-UO-R36" firstAttribute="leading" secondItem="4Ri-BF-M91" secondAttribute="leading" constant="20" id="CnK-VW-ORs"/>
+                                                    <constraint firstItem="P00-UO-R36" firstAttribute="top" secondItem="4Ri-BF-M91" secondAttribute="top" constant="20" id="LPP-Jq-Or8"/>
+                                                    <constraint firstAttribute="bottom" secondItem="P00-UO-R36" secondAttribute="bottom" constant="20" id="yMO-4c-uUL"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="1eb-Oz-Tjk" firstAttribute="top" secondItem="pck-NK-Ys5" secondAttribute="top" constant="20" id="1N4-pT-nah"/>
+                                    <constraint firstItem="1eb-Oz-Tjk" firstAttribute="leading" secondItem="pck-NK-Ys5" secondAttribute="leading" constant="16" id="Cvk-f9-tDE"/>
+                                    <constraint firstAttribute="trailing" secondItem="1eb-Oz-Tjk" secondAttribute="trailing" constant="24" id="Z4M-ih-lCT"/>
+                                    <constraint firstAttribute="bottom" secondItem="1eb-Oz-Tjk" secondAttribute="bottom" constant="20" id="nye-u0-p2e"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="pck-NK-Ys5" firstAttribute="leading" secondItem="5q3-vI-HcK" secondAttribute="leading" id="7ed-lZ-TCC"/>
+                            <constraint firstItem="pck-NK-Ys5" firstAttribute="bottom" secondItem="5q3-vI-HcK" secondAttribute="bottom" id="lnc-ri-UEm"/>
+                            <constraint firstItem="pck-NK-Ys5" firstAttribute="trailing" secondItem="5q3-vI-HcK" secondAttribute="trailing" id="nD8-Jb-4AW"/>
+                            <constraint firstItem="pck-NK-Ys5" firstAttribute="top" secondItem="5q3-vI-HcK" secondAttribute="top" id="wrk-wr-bg1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OdK-0A-yVl"/>
+                    </view>
+                    <connections>
+                        <outlet property="gradientView" destination="pck-NK-Ys5" id="p5o-ya-N59"/>
+                        <outlet property="overviewLabel" destination="P00-UO-R36" id="7Vd-v4-o2K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LSa-9J-Y9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
