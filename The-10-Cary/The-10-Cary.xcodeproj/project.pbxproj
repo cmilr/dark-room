@@ -21,6 +21,8 @@
 		DAA91AC32214F8D80021BC29 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AC12214F8D80021BC29 /* Result.swift */; };
 		DAA91AC522152FE50021BC29 /* RESTful.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AC422152FE50021BC29 /* RESTful.swift */; };
 		DAA91AC722154B720021BC29 /* MovieDBConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AC622154B720021BC29 /* MovieDBConfig.swift */; };
+		DAA91ACD221606CD0021BC29 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91ACC221606CD0021BC29 /* DetailViewController.swift */; };
+		DAA91AD0221615CE0021BC29 /* CAGradientLayer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91ACF221615CE0021BC29 /* CAGradientLayer+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		DAA91AC12214F8D80021BC29 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		DAA91AC422152FE50021BC29 /* RESTful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTful.swift; sourceTree = "<group>"; };
 		DAA91AC622154B720021BC29 /* MovieDBConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieDBConfig.swift; path = "The-10-Cary/Networking/MovieDBConfig.swift"; sourceTree = SOURCE_ROOT; };
+		DAA91ACC221606CD0021BC29 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DAA91ACF221615CE0021BC29 /* CAGradientLayer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				DAA91A882214C1700021BC29 /* AppDelegate.swift */,
 				DAA91A8C2214C1710021BC29 /* Main.storyboard */,
 				DAA91AB82214C6340021BC29 /* MasterScreen */,
+				DAA91ACE221606DE0021BC29 /* DetailScreen */,
 				DAA91ABD2214F6980021BC29 /* Model */,
 				DAA91AC82215BA8B0021BC29 /* Networking */,
 				DAA91AC92215BACC0021BC29 /* Extensions */,
@@ -175,8 +180,17 @@
 			isa = PBXGroup;
 			children = (
 				DAA91AC02214F8D80021BC29 /* UIImageView+Ext.swift */,
+				DAA91ACF221615CE0021BC29 /* CAGradientLayer+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DAA91ACE221606DE0021BC29 /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DAA91ACC221606CD0021BC29 /* DetailViewController.swift */,
+			);
+			path = DetailScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +331,8 @@
 				DAA91AC522152FE50021BC29 /* RESTful.swift in Sources */,
 				DAA91ABF2214F7400021BC29 /* NetworkManager.swift in Sources */,
 				DAA91AC32214F8D80021BC29 /* Result.swift in Sources */,
+				DAA91ACD221606CD0021BC29 /* DetailViewController.swift in Sources */,
+				DAA91AD0221615CE0021BC29 /* CAGradientLayer+Ext.swift in Sources */,
 				DAA91ABC2214F4A70021BC29 /* Movie.swift in Sources */,
 				DAA91AB72214C2FD0021BC29 /* MovieCell.swift in Sources */,
 			);
