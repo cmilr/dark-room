@@ -15,6 +15,14 @@ struct Movie {
    var posterPath: String?
    var backdropPath: String?
 
+   init() {
+      self.id = nil
+      self.title = nil
+      self.overview = nil
+      self.posterPath = nil
+      self.backdropPath = nil
+   }
+
    init?(json: [String: Any]) {
       guard let id = json["id"] as? Int,
          let title = json["title"] as? String,
