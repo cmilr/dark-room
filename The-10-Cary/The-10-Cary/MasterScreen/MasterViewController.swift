@@ -33,7 +33,7 @@ class MasterViewController: UIViewController {
    }
 
    private func loadConfig() {
-      APIHandler.shared.fetchConfig(from: nil) {
+      NetworkManager.shared.fetchConfig(from: nil) {
          (result) in
 
          guard result.error == nil else {
@@ -45,17 +45,11 @@ class MasterViewController: UIViewController {
             return
          }
          self.config = configuration
-         print(self.config)
-
-         DispatchQueue.main.async {
-            self.collectionView.reloadData()
-         }
       }
-
    }
 
    private func loadMovies(urlToLoad: String?) {
-      APIHandler.shared.fetchMovies(from: urlToLoad) {
+      NetworkManager.shared.fetchMovies(from: urlToLoad) {
          (result) in
 
          guard result.error == nil else {
@@ -105,25 +99,23 @@ extension MasterViewController: UICollectionViewDataSource {
       cell.movieTitleLabel.text = movie.title
       cell.movieImageView.image = nil
 
-      if let size = config.posterSizes?.first {
-//         let urlString = config.baseURL! + size + movie.posterPath!
-         let urlString = "https://image.tmdb.org/t/p/w500/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg"
+      if let size = config.posterSizes?[3] {
+         var urlString = config.baseURL! + size + movie.posterPath!
+         let insertIndex = urlString.index(urlString.startIndex, offsetBy: 4)
+         urlString.insert(Character("s"), at: insertIndex)
          print(urlString)
          if let cachedImage = imageCache[urlString] {
             cell.movieImageView.image = cachedImage
          } else {
-            APIHandler.shared.imageFrom(urlString) {
+            NetworkManager.shared.imageFrom(urlString) {
                (image, error) in
                guard error == nil else {
                   print(error!)
                   return
                }
                self.imageCache[urlString] = image
-               DispatchQueue.main.async { [weak self] in
-                  if let cellToUpdate = self?.collectionView.cellForItem(at: indexPath) as? MovieCell {
-                     cellToUpdate.movieImageView.transition(toImage: image)
-                     cellToUpdate.setNeedsLayout()
-                  }
+               DispatchQueue.main.async { [] in
+                  cell.movieImageView.transition(toImage: image)
                }
             }
          }
