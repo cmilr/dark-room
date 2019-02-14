@@ -11,7 +11,9 @@ import UIKit
 class MasterViewController: UIViewController {
 
    @IBOutlet weak var collectionView: UICollectionView!
-   var previousCellPosition = CGFloat.leastNormalMagnitude
+   var movies = [Movie]()
+   var config = MovieDBConfig()
+   var imageCache = [String: UIImage?]()
 
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -19,9 +21,60 @@ class MasterViewController: UIViewController {
       collectionView.delegate = self
    }
 
+   override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      loadConfig()
+      loadMovies(urlToLoad: nil)
+   }
+
    override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
       configureLayout()
+   }
+
+   private func loadConfig() {
+      APIHandler.shared.fetchConfig(from: nil) {
+         (result) in
+
+         guard result.error == nil else {
+            print(result.error!)
+            return
+         }
+         guard let configuration = result.value else {
+            print("Error: no configuration was fetched")
+            return
+         }
+         self.config = configuration
+         print(self.config)
+
+         DispatchQueue.main.async {
+            self.collectionView.reloadData()
+         }
+      }
+
+   }
+
+   private func loadMovies(urlToLoad: String?) {
+      APIHandler.shared.fetchMovies(from: urlToLoad) {
+         (result) in
+
+         guard result.error == nil else {
+            print(result.error!)
+            return
+         }
+         guard let fetchedMovies = result.value else {
+            print("Error: no movies were fetched")
+            return
+         }
+         if urlToLoad == nil {
+            self.movies = []
+         }
+         self.movies += fetchedMovies
+
+         DispatchQueue.main.async {
+            self.collectionView.reloadData()
+         }
+      }
    }
 
    private func configureLayout() {
@@ -42,13 +95,40 @@ extension MasterViewController: UICollectionViewDataSource {
    }
 
    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      return 10
+      return movies.count
    }
 
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as! MovieCell
-      cell.movieTitleLabel.text = String(indexPath.row + 1)
-      cell.movieImageView.image = UIImage(named: "Zissou")
+
+      let movie = movies[indexPath.row]
+      cell.movieTitleLabel.text = movie.title
+      cell.movieImageView.image = nil
+
+      if let size = config.posterSizes?.first {
+//         let urlString = config.baseURL! + size + movie.posterPath!
+         let urlString = "https://image.tmdb.org/t/p/w500/8uO0gUM8aNqYLs1OsTBQiXu0fEv.jpg"
+         print(urlString)
+         if let cachedImage = imageCache[urlString] {
+            cell.movieImageView.image = cachedImage
+         } else {
+            APIHandler.shared.imageFrom(urlString) {
+               (image, error) in
+               guard error == nil else {
+                  print(error!)
+                  return
+               }
+               self.imageCache[urlString] = image
+               DispatchQueue.main.async { [weak self] in
+                  if let cellToUpdate = self?.collectionView.cellForItem(at: indexPath) as? MovieCell {
+                     cellToUpdate.movieImageView.transition(toImage: image)
+                     cellToUpdate.setNeedsLayout()
+                  }
+               }
+            }
+         }
+      }
+
       return cell
    }
 }
@@ -56,6 +136,6 @@ extension MasterViewController: UICollectionViewDataSource {
 extension MasterViewController: UICollectionViewDelegate {
 
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      print(indexPath.item)
+      print("Movie #\(indexPath.item)")
    }
 }
