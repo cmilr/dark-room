@@ -18,42 +18,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kpj-qy-aqH">
+                                <rect key="frame" x="91" y="32" width="193" height="29"/>
+                                <segments>
+                                    <segment title="Now Playing"/>
+                                    <segment title="Coming Soon"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
                             <collectionView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o37-58-fjf">
-                                <rect key="frame" x="0.0" y="71" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="71" width="375" height="567"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PDx-II-XDo">
                                     <size key="itemSize" width="312" height="390"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="x51-T1-6DX" customClass="MovieCell" customModule="The_10_Cary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="38.5" width="312" height="390"/>
+                                        <rect key="frame" x="20" y="88.5" width="312" height="390"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="312" height="390"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lde-Bg-Bin">
-                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="390"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="312" height="349"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COx-6t-p97">
-                                                    <rect key="frame" x="90" y="319" width="132" height="30"/>
+                                                    <rect key="frame" x="90" y="354" width="132" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.95686274510000002" green="0.59339429129999999" blue="0.42760120039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="COx-6t-p97" firstAttribute="centerX" secondItem="x51-T1-6DX" secondAttribute="centerX" id="YME-3w-xp9"/>
+                                            <constraint firstItem="COx-6t-p97" firstAttribute="top" secondItem="lde-Bg-Bin" secondAttribute="bottom" constant="5" id="A0s-un-TxU"/>
+                                            <constraint firstAttribute="bottom" secondItem="lde-Bg-Bin" secondAttribute="bottom" constant="41" id="C0Z-gV-QU4"/>
+                                            <constraint firstItem="COx-6t-p97" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x51-T1-6DX" secondAttribute="leading" constant="20" id="Ij2-Vo-3GP"/>
                                             <constraint firstAttribute="trailing" secondItem="lde-Bg-Bin" secondAttribute="trailing" id="ZQ5-v7-dQB"/>
                                             <constraint firstItem="lde-Bg-Bin" firstAttribute="top" secondItem="x51-T1-6DX" secondAttribute="top" id="cjW-pv-Aed"/>
-                                            <constraint firstAttribute="bottom" secondItem="lde-Bg-Bin" secondAttribute="bottom" id="o5i-iC-mBM"/>
-                                            <constraint firstItem="COx-6t-p97" firstAttribute="bottom" secondItem="lde-Bg-Bin" secondAttribute="bottom" constant="-41" id="rDJ-T6-Xvx"/>
+                                            <constraint firstItem="COx-6t-p97" firstAttribute="centerX" secondItem="lde-Bg-Bin" secondAttribute="centerX" id="kBF-wJ-rdS"/>
                                             <constraint firstItem="lde-Bg-Bin" firstAttribute="leading" secondItem="x51-T1-6DX" secondAttribute="leading" id="uPm-JS-nbB"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="COx-6t-p97" secondAttribute="trailing" constant="20" id="yKM-OP-1Ko"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="movieImageView" destination="lde-Bg-Bin" id="qOU-GU-v3T"/>
@@ -65,10 +75,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.42632680384417898" green="0.28189982826617987" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="kpj-qy-aqH" secondAttribute="bottom" constant="-40" id="1W9-74-3ib"/>
                             <constraint firstItem="o37-58-fjf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="57Q-zU-XEn"/>
                             <constraint firstItem="o37-58-fjf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="RqU-no-Iou"/>
+                            <constraint firstItem="kpj-qy-aqH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YzC-bR-Rjv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o37-58-fjf" secondAttribute="bottom" constant="149" id="ZaR-J1-E6V"/>
-                            <constraint firstItem="o37-58-fjf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="amO-eb-th9"/>
+                            <constraint firstItem="o37-58-fjf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.85" id="amO-eb-th9"/>
                             <constraint firstAttribute="trailing" secondItem="o37-58-fjf" secondAttribute="trailing" id="spM-M5-vkf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

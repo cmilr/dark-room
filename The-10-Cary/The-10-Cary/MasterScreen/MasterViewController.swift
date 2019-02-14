@@ -74,8 +74,8 @@ class MasterViewController: UIViewController {
    private func configureLayout() {
       if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
          flowLayout.itemSize = CGSize(
-            width: collectionView.bounds.width,
-            height: collectionView.bounds.height
+            width: collectionView.bounds.width - CGFloat(40.0),
+            height: collectionView.bounds.height - CGFloat(20.0)
          )
          flowLayout.minimumLineSpacing = CGFloat(20.0)
       }
