@@ -11,9 +11,9 @@ import UIKit
 class MasterViewController: UIViewController {
 
    @IBOutlet weak var collectionView: UICollectionView!
-   var movies = [Movie]()
-   var config = MovieDBConfig()
+   var moviedbConfig = MovieDBConfig()
    var imageCache = [String: UIImage?]()
+   var movies = [Movie]()
 
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -44,7 +44,7 @@ class MasterViewController: UIViewController {
             print("Error: no configuration was fetched")
             return
          }
-         self.config = configuration
+         self.moviedbConfig = configuration
       }
    }
 
@@ -80,6 +80,47 @@ class MasterViewController: UIViewController {
          flowLayout.minimumLineSpacing = CGFloat(20.0)
       }
    }
+
+   private func loadImage(for movie: Movie, into cell: MovieCell) {
+      let screenWidth = UIScreen.main.bounds.width
+      var posterSizeIndex = 0
+
+      switch true {
+      case screenWidth <= 342:
+         posterSizeIndex = 3
+      case screenWidth <= 500:
+         posterSizeIndex = 4
+      case screenWidth <= 780:
+         posterSizeIndex = 5
+      default:
+         posterSizeIndex = 4
+      }
+
+      guard let size = moviedbConfig.posterSizes?[posterSizeIndex],
+         let baseURL = moviedbConfig.baseURL,
+         let posterPath = movie.posterPath else {
+            return
+      }
+
+      var urlString = baseURL + size + posterPath
+      let insertIndex = urlString.index(urlString.startIndex, offsetBy: 4)
+      urlString.insert(Character("s"), at: insertIndex)
+
+      if let cachedImage = imageCache[urlString] {
+         cell.movieImageView.image = cachedImage
+      } else {
+         NetworkManager.shared.imageFrom(urlString) { (image, error) in
+            guard error == nil else {
+               print(error!)
+               return
+            }
+            self.imageCache[urlString] = image
+            DispatchQueue.main.async { [] in
+               cell.movieImageView.transition(toImage: image)
+            }
+         }
+      }
+   }
 }
 
 extension MasterViewController: UICollectionViewDataSource {
@@ -98,28 +139,7 @@ extension MasterViewController: UICollectionViewDataSource {
       let movie = movies[indexPath.row]
       cell.movieTitleLabel.text = movie.title
       cell.movieImageView.image = nil
-
-      if let size = config.posterSizes?[3] {
-         var urlString = config.baseURL! + size + movie.posterPath!
-         let insertIndex = urlString.index(urlString.startIndex, offsetBy: 4)
-         urlString.insert(Character("s"), at: insertIndex)
-         print(urlString)
-         if let cachedImage = imageCache[urlString] {
-            cell.movieImageView.image = cachedImage
-         } else {
-            NetworkManager.shared.imageFrom(urlString) {
-               (image, error) in
-               guard error == nil else {
-                  print(error!)
-                  return
-               }
-               self.imageCache[urlString] = image
-               DispatchQueue.main.async { [] in
-                  cell.movieImageView.transition(toImage: image)
-               }
-            }
-         }
-      }
+      loadImage(for: movie, into: cell)
 
       return cell
    }
