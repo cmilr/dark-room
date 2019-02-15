@@ -87,11 +87,13 @@ class MasterViewController: UIViewController {
 
          DispatchQueue.main.async {
             self.collectionView.reloadData()
-            self.collectionView.scrollToItem(
-               at: IndexPath(row: 0, section: 0),
-               at: .centeredHorizontally,
-               animated: false
-            )
+            if self.movies.count > 0 {
+               self.collectionView.scrollToItem(
+                  at: IndexPath(row: 0, section: 0),
+                  at: .centeredHorizontally,
+                  animated: false
+               )
+            }
          }
       }
    }
