@@ -16,13 +16,18 @@ class DetailViewController: UIViewController {
 
    override func viewDidLoad() {
       super.viewDidLoad()
-      if let overview = movie.overview {
-         overviewLabel.text = overview
-      }
+      configureOverviewLabel()
    }
 
    override func viewDidLayoutSubviews() {
       configureGradientView()
+   }
+
+   private func configureOverviewLabel() {
+      if let overview = movie.overview {
+         overviewLabel.text = overview
+         overviewLabel.setLineHeight(1.5)
+      }
    }
 
    private func configureGradientView() {
