@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -116,7 +117,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1eb-Oz-Tjk">
-                                        <rect key="frame" x="16" y="20" width="374" height="696"/>
+                                        <rect key="frame" x="20" y="20" width="374" height="696"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="la4-97-qHN">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="348"/>
@@ -124,14 +125,17 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ri-BF-M91" userLabel="LabelContainer">
                                                 <rect key="frame" x="0.0" y="348" width="374" height="348"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P00-UO-R36">
-                                                        <rect key="frame" x="20" y="20" width="334" height="308"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P00-UO-R36">
+                                                        <rect key="frame" x="20" y="15" width="334" height="160"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="ldd-Bv-4u7"/>
+                                                        </constraints>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Overview">
                                                                 <attributes>
-                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <font key="NSFont" metaFont="system" size="19"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="1" lineHeightMultiple="7" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
@@ -143,12 +147,12 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.42745098039215684" green="0.28235294117647058" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="movieDarkPurple"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="P00-UO-R36" secondAttribute="trailing" constant="20" id="3jp-FN-GTL"/>
                                                     <constraint firstItem="P00-UO-R36" firstAttribute="leading" secondItem="4Ri-BF-M91" secondAttribute="leading" constant="20" id="CnK-VW-ORs"/>
-                                                    <constraint firstItem="P00-UO-R36" firstAttribute="top" secondItem="4Ri-BF-M91" secondAttribute="top" constant="20" id="LPP-Jq-Or8"/>
-                                                    <constraint firstAttribute="bottom" secondItem="P00-UO-R36" secondAttribute="bottom" constant="20" id="yMO-4c-uUL"/>
+                                                    <constraint firstItem="P00-UO-R36" firstAttribute="top" secondItem="4Ri-BF-M91" secondAttribute="top" constant="15" id="LPP-Jq-Or8"/>
+                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="P00-UO-R36" secondAttribute="bottom" constant="20" id="yMO-4c-uUL"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -162,8 +166,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="1eb-Oz-Tjk" firstAttribute="top" secondItem="pck-NK-Ys5" secondAttribute="top" constant="20" id="1N4-pT-nah"/>
-                                    <constraint firstItem="1eb-Oz-Tjk" firstAttribute="leading" secondItem="pck-NK-Ys5" secondAttribute="leading" constant="16" id="Cvk-f9-tDE"/>
-                                    <constraint firstAttribute="trailing" secondItem="1eb-Oz-Tjk" secondAttribute="trailing" constant="24" id="Z4M-ih-lCT"/>
+                                    <constraint firstItem="1eb-Oz-Tjk" firstAttribute="leading" secondItem="pck-NK-Ys5" secondAttribute="leading" constant="20" id="Cvk-f9-tDE"/>
+                                    <constraint firstAttribute="trailing" secondItem="1eb-Oz-Tjk" secondAttribute="trailing" constant="20" id="Z4M-ih-lCT"/>
                                     <constraint firstAttribute="bottom" secondItem="1eb-Oz-Tjk" secondAttribute="bottom" constant="20" id="nye-u0-p2e"/>
                                 </constraints>
                             </view>
@@ -183,7 +187,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSa-9J-Y9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="132.68365817091455"/>
+            <point key="canvasLocation" x="923.1884057971015" y="132.06521739130434"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="movieDarkPurple">
+            <color red="0.19607843137254902" green="0.062745098039215685" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
