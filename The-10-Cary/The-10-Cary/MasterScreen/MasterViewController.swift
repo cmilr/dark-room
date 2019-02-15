@@ -15,6 +15,7 @@ class MasterViewController: UIViewController {
    var moviedbConfig = MovieDBConfig()
    var imageCache = [String: UIImage?]()
    var movies = [Movie]()
+   var nowPlaying = true
 
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -25,16 +26,32 @@ class MasterViewController: UIViewController {
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       loadConfig()
-      loadMovies(urlToLoad: nil)
+      loadMovies()
       configureSegmentedControl()
    }
 
    override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
       configureLayout()
+      configureGradientView()
    }
 
-   @IBAction func didChooseMovieType(_ sender: Any) {
+   private func configureGradientView() {
+      if let colorOne = UIColor(named: "moviePurple")?.cgColor,
+         let colorTwo = UIColor(named: "movieDarkPurple")?.cgColor {
+         let gradient = CAGradientLayer(start: .topLeft, end: .bottomRight, colors: [colorOne, colorTwo], type: .axial)
+         gradient.frame = view.bounds
+         view.layer.insertSublayer(gradient, at: 0)
+      }
+   }
+
+   @IBAction func didChooseMovieType(_ sender: UISegmentedControl) {
+      if sender.selectedSegmentIndex == 0 {
+         nowPlaying = true
+      } else {
+         nowPlaying = false
+      }
+      loadMovies()
    }
 
    private func loadConfig() {
@@ -53,8 +70,9 @@ class MasterViewController: UIViewController {
       }
    }
 
-   private func loadMovies(urlToLoad: String?) {
-      NetworkManager.shared.fetchMovies(from: urlToLoad) {
+   private func loadMovies() {
+      let baseURL = nowPlaying ? BaseURL.nowPlaying : BaseURL.upcoming
+      NetworkManager.shared.fetchMovies(from: baseURL) {
          (result) in
 
          guard result.error == nil else {
@@ -65,13 +83,15 @@ class MasterViewController: UIViewController {
             print("Error: no movies were fetched")
             return
          }
-         if urlToLoad == nil {
-            self.movies = []
-         }
-         self.movies += fetchedMovies
+         self.movies = fetchedMovies
 
          DispatchQueue.main.async {
             self.collectionView.reloadData()
+            self.collectionView.scrollToItem(
+               at: IndexPath(row: 0, section: 0),
+               at: .centeredHorizontally,
+               animated: false
+            )
          }
       }
    }
@@ -112,7 +132,7 @@ class MasterViewController: UIViewController {
          let posterPath = movie.posterPath else {
             return
       }
-      
+
       var urlString = baseURL + size + posterPath
       let insertIndex = urlString.index(urlString.startIndex, offsetBy: 4)
       urlString.insert(Character("s"), at: insertIndex)
