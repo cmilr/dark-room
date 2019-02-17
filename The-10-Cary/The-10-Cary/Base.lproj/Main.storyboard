@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kpj-qy-aqH">
-                                <rect key="frame" x="20" y="32" width="335" height="29"/>
+                                <rect key="frame" x="20" y="42" width="374" height="29"/>
                                 <segments>
                                     <segment title="Now Playing"/>
                                     <segment title="Upcoming"/>
@@ -31,7 +31,7 @@
                                 </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o37-58-fjf">
-                                <rect key="frame" x="0.0" y="71" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="81" width="414" height="625.66666666666663"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PDx-II-XDo">
                                     <size key="itemSize" width="312" height="390"/>
@@ -41,7 +41,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="x51-T1-6DX" customClass="MovieCell" customModule="The_10_Cary" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="88.666666666666671" width="312" height="390"/>
+                                        <rect key="frame" x="20" y="117.66666666666667" width="312" height="390"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="312" height="390"/>
@@ -80,14 +80,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.42632680384417898" green="0.28189982826617987" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="kpj-qy-aqH" secondAttribute="bottom" constant="-40" id="1W9-74-3ib"/>
                             <constraint firstItem="o37-58-fjf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="57Q-zU-XEn"/>
-                            <constraint firstItem="o37-58-fjf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="RqU-no-Iou"/>
+                            <constraint firstItem="o37-58-fjf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="61" id="RqU-no-Iou"/>
                             <constraint firstItem="kpj-qy-aqH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="URv-X4-b5E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o37-58-fjf" secondAttribute="bottom" constant="149" id="ZaR-J1-E6V"/>
                             <constraint firstItem="o37-58-fjf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.85" id="amO-eb-th9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kpj-qy-aqH" secondAttribute="trailing" constant="20" id="ivb-Xj-fcz"/>
                             <constraint firstAttribute="trailing" secondItem="o37-58-fjf" secondAttribute="trailing" id="spM-M5-vkf"/>
+                            <constraint firstItem="kpj-qy-aqH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="uoV-5X-v3J"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
@@ -99,11 +99,12 @@
                     <connections>
                         <outlet property="collectionView" destination="o37-58-fjf" id="28S-9u-rkS"/>
                         <outlet property="segmentedControl" destination="kpj-qy-aqH" id="rKx-qh-k7o"/>
+                        <outlet property="segmentedControlYConstraint" destination="uoV-5X-v3J" id="UCS-2q-heM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="132.68365817091455"/>
+            <point key="canvasLocation" x="131.8840579710145" y="132.06521739130434"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="ElX-hP-WQs">
@@ -116,8 +117,8 @@
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="pck-NK-Ys5" userLabel="GradientView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="aG6-Oz-DCu" userLabel="Navigation">
-                                        <rect key="frame" x="10" y="30" width="55" height="33"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="aG6-Oz-DCu" userLabel="Navigation">
+                                        <rect key="frame" x="10" y="40" width="55" height="33"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Ltq-5X-HnL">
                                                 <rect key="frame" x="0.0" y="6.6666666666666643" width="13" height="20"/>
@@ -139,19 +140,19 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="vhT-Me-DrM" userLabel="Container Stack View">
-                                        <rect key="frame" x="20" y="73" width="374" height="643"/>
+                                        <rect key="frame" x="20" y="83" width="374" height="633"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="341-uf-TZA" userLabel="Header">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="234.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="230.66666666666666"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="xrA-Vg-akF">
-                                                        <rect key="frame" x="0.0" y="4" width="151.33333333333334" height="227"/>
+                                                        <rect key="frame" x="0.0" y="2" width="151.33333333333334" height="227"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="xrA-Vg-akF" secondAttribute="height" multiplier="1:1.5" id="mn3-zl-SEv"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="4fS-0w-9vv" userLabel="Stats">
-                                                        <rect key="frame" x="164.33333333333337" y="75.666666666666657" width="209.66666666666663" height="83.666666666666657"/>
+                                                        <rect key="frame" x="164.33333333333337" y="73.666666666666657" width="209.66666666666663" height="83.666666666666657"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwI-Yi-2GH">
                                                                 <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="26.333333333333332"/>
@@ -176,7 +177,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ri-BF-M91" userLabel="Footer">
-                                                <rect key="frame" x="0.0" y="267.66666666666674" width="374" height="375.33333333333326"/>
+                                                <rect key="frame" x="0.0" y="263.66666666666674" width="374" height="369.33333333333326"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P00-UO-R36">
                                                         <rect key="frame" x="20" y="15" width="334" height="160"/>
@@ -224,7 +225,7 @@
                                 <constraints>
                                     <constraint firstItem="vhT-Me-DrM" firstAttribute="top" secondItem="aG6-Oz-DCu" secondAttribute="bottom" constant="10" id="7NE-dN-iAE"/>
                                     <constraint firstAttribute="bottom" secondItem="vhT-Me-DrM" secondAttribute="bottom" constant="20" id="Qjg-F8-WbZ"/>
-                                    <constraint firstItem="aG6-Oz-DCu" firstAttribute="top" secondItem="pck-NK-Ys5" secondAttribute="top" constant="30" id="WDe-4F-tZN"/>
+                                    <constraint firstItem="aG6-Oz-DCu" firstAttribute="top" secondItem="pck-NK-Ys5" secondAttribute="top" constant="40" id="WDe-4F-tZN"/>
                                     <constraint firstItem="vhT-Me-DrM" firstAttribute="leading" secondItem="pck-NK-Ys5" secondAttribute="leading" constant="20" id="afe-JI-Mo1"/>
                                     <constraint firstItem="aG6-Oz-DCu" firstAttribute="leading" secondItem="pck-NK-Ys5" secondAttribute="leading" constant="10" id="faF-pd-0Mr"/>
                                     <constraint firstAttribute="trailing" secondItem="vhT-Me-DrM" secondAttribute="trailing" constant="20" id="zAi-WU-Y8M"/>
@@ -240,7 +241,7 @@
                         <viewLayoutGuide key="safeArea" id="OdK-0A-yVl"/>
                     </view>
                     <connections>
-                        <outlet property="backButtonImageView" destination="Ltq-5X-HnL" id="YiO-wJ-upB"/>
+                        <outlet property="backButtonImageView" destination="Ltq-5X-HnL" id="hHo-yC-4bf"/>
                         <outlet property="genreLabel" destination="2L1-Gu-yd7" id="zN5-zt-bEu"/>
                         <outlet property="gradientView" destination="pck-NK-Ys5" id="p5o-ya-N59"/>
                         <outlet property="overviewLabel" destination="P00-UO-R36" id="7Vd-v4-o2K"/>
