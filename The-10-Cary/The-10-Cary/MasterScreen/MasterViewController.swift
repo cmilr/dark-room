@@ -17,7 +17,8 @@ class MasterViewController: UIViewController {
    var imageCache = [String: UIImage?]()
    var movies = [Movie]()
    var nowPlaying = true
-   
+   var switchingCategories = false
+
    override func viewDidLoad() {
       super.viewDidLoad()
       collectionView.dataSource = self
@@ -51,6 +52,7 @@ class MasterViewController: UIViewController {
       } else {
          nowPlaying = false
       }
+      switchingCategories = true
       loadMovies()
    }
 
@@ -71,12 +73,13 @@ class MasterViewController: UIViewController {
 
          DispatchQueue.main.async {
             self.collectionView.reloadData()
-            if self.movies.count > 0 {
+            if self.movies.count > 0, self.switchingCategories {
                self.collectionView.scrollToItem(
                   at: IndexPath(row: 0, section: 0),
                   at: .centeredHorizontally,
                   animated: false
                )
+               self.switchingCategories = false
             }
          }
       }
