@@ -12,7 +12,6 @@ class MasterViewController: UIViewController {
 
    @IBOutlet weak var collectionView: UICollectionView!
    @IBOutlet weak var segmentedControl: UISegmentedControl!
-   var moviedbConfig = MovieDBConfig()
    var imageCache = [String: UIImage?]()
    var movies = [Movie]()
    var nowPlaying = true
@@ -20,12 +19,10 @@ class MasterViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       collectionView.dataSource = self
-      collectionView.delegate = self
    }
 
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
-      loadConfig()
       loadMovies()
       configureSegmentedControl()
    }
@@ -52,22 +49,6 @@ class MasterViewController: UIViewController {
          nowPlaying = false
       }
       loadMovies()
-   }
-
-   private func loadConfig() {
-      NetworkManager.shared.fetchConfig(from: nil) {
-         (result) in
-
-         guard result.error == nil else {
-            print(result.error!)
-            return
-         }
-         guard let configuration = result.value else {
-            print("Error: no configuration was fetched")
-            return
-         }
-         self.moviedbConfig = configuration
-      }
    }
 
    private func loadMovies() {
@@ -115,30 +96,9 @@ class MasterViewController: UIViewController {
    }
 
    private func loadImage(for movie: Movie, into cell: MovieCell) {
-      let screenWidth = UIScreen.main.bounds.width
-      var posterSizeIndex = 0
-
-      switch true {
-      case screenWidth <= 342:
-         posterSizeIndex = 3
-      case screenWidth <= 500:
-         posterSizeIndex = 4
-      case screenWidth <= 780:
-         posterSizeIndex = 5
-      default:
-         posterSizeIndex = 4
+      guard let urlString = movie.composedPosterPath else {
+         return
       }
-
-      guard let size = moviedbConfig.posterSizes?[posterSizeIndex],
-         let baseURL = moviedbConfig.baseURL,
-         let posterPath = movie.posterPath else {
-            return
-      }
-
-      var urlString = baseURL + size + posterPath
-      let insertIndex = urlString.index(urlString.startIndex, offsetBy: 4)
-      urlString.insert(Character("s"), at: insertIndex)
-
       if let cachedImage = imageCache[urlString] {
          cell.movieImageView.image = cachedImage
       } else {
@@ -162,6 +122,7 @@ class MasterViewController: UIViewController {
                let indexPath = collectionView?.indexPath(for: selectedCell) {
             let movie = movies[indexPath.row]
             detailPage.movie = movie
+            detailPage.imageCache = imageCache
          }
       }
    }
@@ -186,12 +147,5 @@ extension MasterViewController: UICollectionViewDataSource {
       loadImage(for: movie, into: cell)
 
       return cell
-   }
-}
-
-extension MasterViewController: UICollectionViewDelegate {
-
-   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      print("Movie #\(indexPath.item)")
    }
 }
