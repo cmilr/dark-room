@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
    @IBOutlet weak var genreLabel: UILabel!
    @IBOutlet weak var overviewLabel: UILabel!
    @IBOutlet weak var posterImageView: UIImageView!
+   @IBOutlet weak var backButtonImageView: UIImageView!
 
    var movie = Movie()
    var imageCache = [String: UIImage?]()
@@ -27,6 +28,7 @@ class DetailViewController: UIViewController {
       setGenres()
       setOverviewLabel()
       setPoster()
+      configureBackButton()
    }
 
    override func viewDidLayoutSubviews() {
@@ -92,6 +94,10 @@ class DetailViewController: UIViewController {
          gradient.frame = gradientView.bounds
          gradientView.layer.insertSublayer(gradient, at: 0)
       }
+   }
+
+   private func configureBackButton() {
+      backButtonImageView.tintColorDidChange()
    }
 
    @IBAction func dismissViewController(_ sender: Any) {
