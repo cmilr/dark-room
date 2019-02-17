@@ -12,5 +12,12 @@ class MovieCell: UICollectionViewCell {
 
    @IBOutlet weak var movieImageView: UIImageView!
    @IBOutlet weak var movieTitleLabel: UILabel!
+   @IBOutlet weak var movieTitleLabelYConstraint: NSLayoutConstraint!
+
+   func configure() {
+      if UIScreen.main.bounds.height >= 812 {
+         movieTitleLabelYConstraint.constant = -30
+      }
+   }
    
 }
