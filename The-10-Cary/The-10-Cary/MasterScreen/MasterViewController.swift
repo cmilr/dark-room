@@ -18,10 +18,12 @@ class MasterViewController: UIViewController {
    var movies = [Movie]()
    var nowPlaying = true
    var switchingCategories = false
+   var collectionViewX = CGFloat(0.0)
 
    override func viewDidLoad() {
       super.viewDidLoad()
       collectionView.dataSource = self
+      collectionView.delegate = self
    }
 
    override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +102,7 @@ class MasterViewController: UIViewController {
          )
          flowLayout.minimumLineSpacing = CGFloat(20.0)
       }
+      collectionViewX = collectionView.contentOffset.x
    }
 
    private func configureSegmentedControl() {
@@ -164,5 +167,15 @@ extension MasterViewController: UICollectionViewDataSource {
       loadImage(for: movie, into: cell)
 
       return cell
+   }
+}
+
+extension MasterViewController: UICollectionViewDelegate {
+
+   func scrollViewDidScroll(_ scrollView: UIScrollView) {
+      let reloadDistance = CGFloat(-75.0)
+      if collectionView.contentOffset.x < reloadDistance {
+         loadMovies()
+      }
    }
 }
