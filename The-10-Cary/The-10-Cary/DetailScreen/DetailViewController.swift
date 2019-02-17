@@ -10,7 +10,6 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-   @IBOutlet weak var gradientView: UIView!
    @IBOutlet weak var titleLabel: UILabel!
    @IBOutlet weak var ratingsLabel: UILabel!
    @IBOutlet weak var genreLabel: UILabel!
@@ -32,7 +31,7 @@ class DetailViewController: UIViewController {
    }
 
    override func viewDidLayoutSubviews() {
-      configureGradientView()
+      configureGradient()
    }
 
    private func setTitleLabel() {
@@ -87,12 +86,12 @@ class DetailViewController: UIViewController {
       }
    }
 
-   private func configureGradientView() {
+   private func configureGradient() {
       if let colorOne = UIColor(named: "moviePurple")?.cgColor,
          let colorTwo = UIColor(named: "movieDarkPurple")?.cgColor {
          let gradient = CAGradientLayer(start: .topLeft, end: .bottomRight, colors: [colorOne, colorTwo], type: .axial)
-         gradient.frame = gradientView.bounds
-         gradientView.layer.insertSublayer(gradient, at: 0)
+         gradient.frame = view.bounds
+         view.layer.insertSublayer(gradient, at: 0)
       }
    }
 
