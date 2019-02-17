@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DA03DF3722162F41000180B6 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03DF3622162F41000180B6 /* UILabel+Ext.swift */; };
+		DA03DF3C22174381000180B6 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03DF3A22174381000180B6 /* Genres.swift */; };
+		DA03DF3D22174381000180B6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03DF3B22174381000180B6 /* Movie.swift */; };
 		DAA91A892214C1700021BC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91A882214C1700021BC29 /* AppDelegate.swift */; };
 		DAA91A8B2214C1710021BC29 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91A8A2214C1710021BC29 /* MasterViewController.swift */; };
 		DAA91A8E2214C1710021BC29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA91A8C2214C1710021BC29 /* Main.storyboard */; };
@@ -16,7 +18,6 @@
 		DAA91A9E2214C1730021BC29 /* The_10_CaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91A9D2214C1730021BC29 /* The_10_CaryTests.swift */; };
 		DAA91AA92214C1730021BC29 /* The_10_CaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AA82214C1730021BC29 /* The_10_CaryUITests.swift */; };
 		DAA91AB72214C2FD0021BC29 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AB62214C2FD0021BC29 /* MovieCell.swift */; };
-		DAA91ABC2214F4A70021BC29 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91ABB2214F4A70021BC29 /* Movie.swift */; };
 		DAA91ABF2214F7400021BC29 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91ABE2214F73F0021BC29 /* NetworkManager.swift */; };
 		DAA91AC22214F8D80021BC29 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AC02214F8D80021BC29 /* UIImageView+Ext.swift */; };
 		DAA91AC32214F8D80021BC29 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AC12214F8D80021BC29 /* Result.swift */; };
@@ -45,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		DA03DF3622162F41000180B6 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
+		DA03DF3A22174381000180B6 /* Genres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Genres.swift; path = "The-10-Cary/Model/Genres.swift"; sourceTree = SOURCE_ROOT; };
+		DA03DF3B22174381000180B6 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = "The-10-Cary/Model/Movie.swift"; sourceTree = SOURCE_ROOT; };
 		DAA91A852214C1700021BC29 /* The-10-Cary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-10-Cary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA91A882214C1700021BC29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAA91A8A2214C1710021BC29 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +62,6 @@
 		DAA91AA82214C1730021BC29 /* The_10_CaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_10_CaryUITests.swift; sourceTree = "<group>"; };
 		DAA91AAA2214C1730021BC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA91AB62214C2FD0021BC29 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
-		DAA91ABB2214F4A70021BC29 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DAA91ABE2214F73F0021BC29 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DAA91AC02214F8D80021BC29 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		DAA91AC12214F8D80021BC29 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -161,7 +163,8 @@
 		DAA91ABD2214F6980021BC29 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DAA91ABB2214F4A70021BC29 /* Movie.swift */,
+				DA03DF3A22174381000180B6 /* Genres.swift */,
+				DA03DF3B22174381000180B6 /* Movie.swift */,
 			);
 			name = Model;
 			path = "New Group";
@@ -335,10 +338,11 @@
 				DAA91ABF2214F7400021BC29 /* NetworkManager.swift in Sources */,
 				DAA91AC32214F8D80021BC29 /* Result.swift in Sources */,
 				DAA91ACD221606CD0021BC29 /* DetailViewController.swift in Sources */,
+				DA03DF3C22174381000180B6 /* Genres.swift in Sources */,
 				DAA91AD0221615CE0021BC29 /* CAGradientLayer+Ext.swift in Sources */,
-				DAA91ABC2214F4A70021BC29 /* Movie.swift in Sources */,
 				DA03DF3722162F41000180B6 /* UILabel+Ext.swift in Sources */,
 				DAA91AB72214C2FD0021BC29 /* MovieCell.swift in Sources */,
+				DA03DF3D22174381000180B6 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,7 +527,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cmillerco.The-10-Cary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -541,7 +545,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cmillerco.The-10-Cary";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
