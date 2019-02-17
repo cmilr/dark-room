@@ -16,6 +16,7 @@ class MasterViewController: UIViewController {
    var movies = [Movie]()
    var nowPlaying = true
 
+   @IBOutlet weak var segmentedControlYConstraint: NSLayoutConstraint!
    override func viewDidLoad() {
       super.viewDidLoad()
       collectionView.dataSource = self
@@ -31,6 +32,7 @@ class MasterViewController: UIViewController {
       super.viewDidLayoutSubviews()
       configureLayout()
       configureGradientView()
+      configureSegmentedControl()
    }
 
    private func configureGradientView() {
@@ -80,10 +82,16 @@ class MasterViewController: UIViewController {
    }
 
    private func configureLayout() {
+      var widthReduction: CGFloat = 40.0
+      var heightReduction: CGFloat = 20.0
+      if UIScreen.main.bounds.height >= 812 {
+         widthReduction = 0
+         heightReduction = 0
+      }
       if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
          flowLayout.itemSize = CGSize(
-            width: collectionView.bounds.width - CGFloat(40.0),
-            height: collectionView.bounds.height - CGFloat(20.0)
+            width: collectionView.bounds.width - widthReduction,
+            height: collectionView.bounds.height - heightReduction
          )
          flowLayout.minimumLineSpacing = CGFloat(20.0)
       }
@@ -93,6 +101,9 @@ class MasterViewController: UIViewController {
       let font = UIFont.boldSystemFont(ofSize: 18)
       segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
       segmentedControl.layer.cornerRadius = 0.0
+      if UIScreen.main.bounds.height >= 812 {
+         segmentedControlYConstraint.constant = 50
+      }
    }
 
    private func loadImage(for movie: Movie, into cell: MovieCell) {
