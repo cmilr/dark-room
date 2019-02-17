@@ -12,11 +12,12 @@ class MasterViewController: UIViewController {
 
    @IBOutlet weak var collectionView: UICollectionView!
    @IBOutlet weak var segmentedControl: UISegmentedControl!
+   @IBOutlet weak var collectionViewYConstraint: NSLayoutConstraint!
+   @IBOutlet weak var segmentedControlYConstraint: NSLayoutConstraint!
    var imageCache = [String: UIImage?]()
    var movies = [Movie]()
    var nowPlaying = true
-
-   @IBOutlet weak var segmentedControlYConstraint: NSLayoutConstraint!
+   
    override func viewDidLoad() {
       super.viewDidLoad()
       collectionView.dataSource = self
@@ -31,11 +32,11 @@ class MasterViewController: UIViewController {
    override func viewDidLayoutSubviews() {
       super.viewDidLayoutSubviews()
       configureLayout()
-      configureGradientView()
+      configureGradient()
       configureSegmentedControl()
    }
 
-   private func configureGradientView() {
+   private func configureGradient() {
       if let colorOne = UIColor(named: "moviePurple")?.cgColor,
          let colorTwo = UIColor(named: "movieDarkPurple")?.cgColor {
          let gradient = CAGradientLayer(start: .topLeft, end: .bottomRight, colors: [colorOne, colorTwo], type: .axial)
@@ -87,6 +88,7 @@ class MasterViewController: UIViewController {
       if UIScreen.main.bounds.height >= 812 {
          widthReduction = 0
          heightReduction = 0
+         collectionViewYConstraint.constant = 50
       }
       if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
          flowLayout.itemSize = CGSize(
@@ -155,6 +157,7 @@ extension MasterViewController: UICollectionViewDataSource {
       let movie = movies[indexPath.row]
       cell.movieTitleLabel.text = movie.title
       cell.movieImageView.image = nil
+      cell.configure()
       loadImage(for: movie, into: cell)
 
       return cell
