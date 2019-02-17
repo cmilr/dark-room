@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
    @IBOutlet weak var posterImageView: UIImageView!
 
    var movie = Movie()
+   var imageCache = [String: UIImage?]()
 
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -25,6 +26,7 @@ class DetailViewController: UIViewController {
       setRating()
       setGenres()
       setOverviewLabel()
+      setPoster()
    }
 
    override func viewDidLayoutSubviews() {
@@ -63,6 +65,26 @@ class DetailViewController: UIViewController {
       }
    }
 
+   private func setPoster() {
+      guard let urlString = movie.composedPosterPath else {
+         return
+      }
+      if let cachedImage = imageCache[urlString] {
+         posterImageView.image = cachedImage
+      } else {
+         NetworkManager.shared.imageFrom(urlString) { (image, error) in
+            guard error == nil else {
+               print(error!)
+               return
+            }
+            self.imageCache[urlString] = image
+            DispatchQueue.main.async { [] in
+               self.posterImageView.transition(toImage: image)
+            }
+         }
+      }
+   }
+
    private func configureGradientView() {
       if let colorOne = UIColor(named: "moviePurple")?.cgColor,
          let colorTwo = UIColor(named: "movieDarkPurple")?.cgColor {
@@ -70,5 +92,9 @@ class DetailViewController: UIViewController {
          gradient.frame = gradientView.bounds
          gradientView.layer.insertSublayer(gradient, at: 0)
       }
+   }
+
+   @IBAction func dismissViewController(_ sender: Any) {
+      dismiss(animated: true, completion: nil)
    }
 }
