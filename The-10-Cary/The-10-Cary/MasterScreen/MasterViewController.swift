@@ -55,7 +55,15 @@ class MasterViewController: UIViewController {
 
    @objc func willEnterForeground() {
       nowPlaying = true
+      segmentedControl.selectedSegmentIndex = 0
       loadMovies(into: &nowPlayingMovies)
+      if self.movies.count > 0 {
+         collectionView.scrollToItem(
+            at: IndexPath(row: 0, section: 0),
+            at: .centeredHorizontally,
+            animated: false
+         )
+      }
    }
 
    private func centerCurrentCell() {
@@ -191,8 +199,8 @@ class MasterViewController: UIViewController {
       let swipeAlreadyShown = UserDefaults.standard.bool(forKey: "swipeShown")
       if !swipeAlreadyShown {
          swipeImageView.isHidden = false
-         swipeImageView.fadeIn(1.25, delay: 0.5)
-         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+         swipeImageView.fadeIn(1.25, delay: 1)
+         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             self.swipeImageView.fadeOut(1.25, delay: 0)
          }
          UserDefaults.standard.set(true, forKey: "swipeShown")
@@ -242,7 +250,7 @@ extension MasterViewController: UICollectionViewDelegate {
 
    // Custom refresh control for horizontal UICollectionViews.
    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-      let reloadDistance = CGFloat(-50.0)
+      let reloadDistance = CGFloat(-70.0)
       if collectionView.contentOffset.x < reloadDistance {
          activityIndicator.isHidden = false
          activityIndicator.startAnimating()
