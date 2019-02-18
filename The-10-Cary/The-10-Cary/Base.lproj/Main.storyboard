@@ -181,37 +181,37 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ri-BF-M91" userLabel="Footer">
+                                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="4Ri-BF-M91" userLabel="Footer">
                                         <rect key="frame" x="0.0" y="267" width="374" height="374"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P00-UO-R36">
-                                                <rect key="frame" x="20" y="15" width="334" height="160"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="ldd-Bv-4u7"/>
-                                                </constraints>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9Q-hg-JpR">
+                                                <rect key="frame" x="20" y="15" width="334" height="344"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Overview">
+                                                    <fragment>
+                                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. </string>
                                                         <attributes>
-                                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" metaFont="system" size="19"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="1" lineHeightMultiple="7" tighteningFactorForTruncation="0.0"/>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="18" name=".SFNSText"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment>
+                                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" name="movieDarkPurple"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="P00-UO-R36" secondAttribute="trailing" constant="20" id="3jp-FN-GTL"/>
-                                            <constraint firstItem="P00-UO-R36" firstAttribute="leading" secondItem="4Ri-BF-M91" secondAttribute="leading" constant="20" id="CnK-VW-ORs"/>
-                                            <constraint firstItem="P00-UO-R36" firstAttribute="top" secondItem="4Ri-BF-M91" secondAttribute="top" constant="15" id="LPP-Jq-Or8"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="P00-UO-R36" secondAttribute="bottom" constant="20" id="yMO-4c-uUL"/>
+                                            <constraint firstAttribute="trailing" secondItem="Y9Q-hg-JpR" secondAttribute="trailing" constant="20" id="Cyv-Nb-VJy"/>
+                                            <constraint firstAttribute="bottom" secondItem="Y9Q-hg-JpR" secondAttribute="bottom" constant="15" id="bZ1-V7-Gim"/>
+                                            <constraint firstItem="Y9Q-hg-JpR" firstAttribute="top" secondItem="4Ri-BF-M91" secondAttribute="top" constant="15" id="fUz-tW-IHm"/>
+                                            <constraint firstItem="Y9Q-hg-JpR" firstAttribute="leading" secondItem="4Ri-BF-M91" secondAttribute="leading" constant="20" id="jJS-Yh-amR"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -223,6 +223,8 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="341-uf-TZA" secondAttribute="trailing" id="AVL-IY-O9h"/>
                                     <constraint firstItem="4Ri-BF-M91" firstAttribute="height" secondItem="341-uf-TZA" secondAttribute="height" multiplier="1.6" id="YVu-Pj-rsD"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Ri-BF-M91" secondAttribute="trailing" id="mPi-a8-6qo"/>
+                                    <constraint firstItem="4Ri-BF-M91" firstAttribute="leading" secondItem="vhT-Me-DrM" secondAttribute="leading" id="xzs-J5-KIX"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -239,7 +241,7 @@
                     <connections>
                         <outlet property="backButtonImageView" destination="Ltq-5X-HnL" id="hHo-yC-4bf"/>
                         <outlet property="genreLabel" destination="2L1-Gu-yd7" id="zN5-zt-bEu"/>
-                        <outlet property="overviewLabel" destination="P00-UO-R36" id="7Vd-v4-o2K"/>
+                        <outlet property="overviewTextView" destination="Y9Q-hg-JpR" id="mPd-Pd-pTu"/>
                         <outlet property="posterImageView" destination="xrA-Vg-akF" id="kp3-I5-Xuo"/>
                         <outlet property="ratingsLabel" destination="CFD-WU-iVF" id="reQ-ky-FCh"/>
                         <outlet property="titleLabel" destination="DwI-Yi-2GH" id="O3o-w2-W3W"/>
