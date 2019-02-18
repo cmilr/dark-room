@@ -27,11 +27,21 @@ class DetailViewController: UIViewController {
       setGenres()
       setPoster()
       configureBackButton()
+      NotificationCenter.default.addObserver(
+         self,
+         selector: #selector(willEnterBackground),
+         name: UIApplication.willResignActiveNotification,
+         object: nil
+      )
    }
 
    override func viewDidLayoutSubviews() {
       configureGradient()
       setOverview()
+   }
+
+   @objc func willEnterBackground() {
+      dismiss(animated: false, completion: nil)
    }
 
    private func setTitleLabel() {
