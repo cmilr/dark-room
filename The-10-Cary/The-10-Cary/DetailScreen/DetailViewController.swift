@@ -25,13 +25,13 @@ class DetailViewController: UIViewController {
       setTitleLabel()
       setRating()
       setGenres()
-      setOverview()
       setPoster()
       configureBackButton()
    }
 
    override func viewDidLayoutSubviews() {
       configureGradient()
+      setOverview()
    }
 
    private func setTitleLabel() {
@@ -84,6 +84,8 @@ class DetailViewController: UIViewController {
 
          overviewTextView.indicatorStyle = .white
          overviewTextView.scrollIndicatorInsets = UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
+         overviewTextView.setContentOffset(CGPoint.zero, animated: false)
+
          DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.overviewTextView.flashScrollIndicators()
          }
