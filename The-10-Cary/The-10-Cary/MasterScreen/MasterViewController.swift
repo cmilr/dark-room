@@ -16,6 +16,7 @@ class MasterViewController: UIViewController {
    @IBOutlet weak var segmentedControl: UISegmentedControl!
    @IBOutlet weak var collectionViewYConstraint: NSLayoutConstraint!
    @IBOutlet weak var segmentedControlYConstraint: NSLayoutConstraint!
+
    var imageCache = [String: UIImage?]()
    var nowPlayingMovies = [Movie]()
    var upcomingMovies = [Movie]()
@@ -29,12 +30,18 @@ class MasterViewController: UIViewController {
       super.viewDidLoad()
       collectionView.dataSource = self
       collectionView.delegate = self
-      showSwipeImage()
+      loadMovies(into: &movies)
+      showSwipeImageIfNeeded()
+      NotificationCenter.default.addObserver(
+         self,
+         selector: #selector(willEnterForeground),
+         name: UIApplication.willEnterForegroundNotification,
+         object: nil
+      )
    }
 
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
-      loadMovies(into: &movies)
       centerCurrentCell()
    }
 
@@ -44,6 +51,11 @@ class MasterViewController: UIViewController {
       configureGradient()
       configureSegmentedControl()
       collectionView.flashScrollIndicators()
+   }
+
+   @objc func willEnterForeground() {
+      nowPlaying = true
+      loadMovies(into: &nowPlayingMovies)
    }
 
    private func centerCurrentCell() {
@@ -86,6 +98,9 @@ class MasterViewController: UIViewController {
 
          DispatchQueue.main.async {
             self.collectionView.reloadData()
+
+            // If switching between 'Now Playing' & 'Upcoming',
+            // scroll to first cell, then center in view.
             if self.movies.count > 0, self.switchingCategories {
                self.collectionView.scrollToItem(
                   at: IndexPath(row: 0, section: 0),
@@ -123,14 +138,6 @@ class MasterViewController: UIViewController {
                cell.movieImageView.transition(toImage: image)
             }
          }
-      }
-   }
-
-   private func showSwipeImage() {
-      swipeImageView.isHidden = false
-      swipeImageView.fadeIn(1, delay: 1)
-      DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-         self.swipeImageView.fadeOut(1, delay: 0)
       }
    }
 
@@ -177,6 +184,18 @@ class MasterViewController: UIViewController {
       segmentedControl.layer.cornerRadius = 0.0
       if UIScreen.main.bounds.height >= 812 {
          segmentedControlYConstraint.constant = 50
+      }
+   }
+
+   private func showSwipeImageIfNeeded() {
+      let swipeAlreadyShown = UserDefaults.standard.bool(forKey: "swipeShown")
+      if !swipeAlreadyShown {
+         swipeImageView.isHidden = false
+         swipeImageView.fadeIn(1.25, delay: 0.5)
+         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.swipeImageView.fadeOut(1.25, delay: 0)
+         }
+         UserDefaults.standard.set(true, forKey: "swipeShown")
       }
    }
 
