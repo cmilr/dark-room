@@ -254,7 +254,7 @@
         <image name="image-placeholder" width="712" height="712"/>
         <image name="left-arrow" width="13" height="21"/>
         <namedColor name="movieDarkPurple">
-            <color red="0.19607843137254902" green="0.062745098039215685" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.19599999487400055" green="0.063000001013278961" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
