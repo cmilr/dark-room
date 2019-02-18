@@ -19,5 +19,4 @@ class MovieCell: UICollectionViewCell {
          movieTitleLabelYConstraint.constant = -30
       }
    }
-   
 }
