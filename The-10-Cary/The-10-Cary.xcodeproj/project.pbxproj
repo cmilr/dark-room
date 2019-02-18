@@ -10,10 +10,10 @@
 		DA03DF3722162F41000180B6 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03DF3622162F41000180B6 /* UILabel+Ext.swift */; };
 		DA03DF3C22174381000180B6 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03DF3A22174381000180B6 /* Genres.swift */; };
 		DA03DF3D22174381000180B6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03DF3B22174381000180B6 /* Movie.swift */; };
+		DA03DF3F221A3E85000180B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA03DF3E221A3E84000180B6 /* Assets.xcassets */; };
 		DAA91A892214C1700021BC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91A882214C1700021BC29 /* AppDelegate.swift */; };
 		DAA91A8B2214C1710021BC29 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91A8A2214C1710021BC29 /* MasterViewController.swift */; };
 		DAA91A8E2214C1710021BC29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA91A8C2214C1710021BC29 /* Main.storyboard */; };
-		DAA91A902214C1730021BC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAA91A8F2214C1730021BC29 /* Assets.xcassets */; };
 		DAA91A932214C1730021BC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA91A912214C1730021BC29 /* LaunchScreen.storyboard */; };
 		DAA91A9E2214C1730021BC29 /* The_10_CaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91A9D2214C1730021BC29 /* The_10_CaryTests.swift */; };
 		DAA91AA92214C1730021BC29 /* The_10_CaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AA82214C1730021BC29 /* The_10_CaryUITests.swift */; };
@@ -48,11 +48,11 @@
 		DA03DF3622162F41000180B6 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		DA03DF3A22174381000180B6 /* Genres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Genres.swift; path = "The-10-Cary/Model/Genres.swift"; sourceTree = SOURCE_ROOT; };
 		DA03DF3B22174381000180B6 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = "The-10-Cary/Model/Movie.swift"; sourceTree = SOURCE_ROOT; };
+		DA03DF3E221A3E84000180B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAA91A852214C1700021BC29 /* The-10-Cary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-10-Cary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA91A882214C1700021BC29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAA91A8A2214C1710021BC29 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		DAA91A8D2214C1710021BC29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DAA91A8F2214C1730021BC29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAA91A922214C1730021BC29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAA91A942214C1730021BC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA91A992214C1730021BC29 /* The-10-CaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The-10-CaryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,12 +121,12 @@
 			children = (
 				DAA91A882214C1700021BC29 /* AppDelegate.swift */,
 				DAA91A8C2214C1710021BC29 /* Main.storyboard */,
+				DA03DF3E221A3E84000180B6 /* Assets.xcassets */,
 				DAA91AB82214C6340021BC29 /* MasterScreen */,
 				DAA91ACE221606DE0021BC29 /* DetailScreen */,
 				DAA91ABD2214F6980021BC29 /* Model */,
 				DAA91AC82215BA8B0021BC29 /* Networking */,
 				DAA91AC92215BACC0021BC29 /* Extensions */,
-				DAA91A8F2214C1730021BC29 /* Assets.xcassets */,
 				DAA91A912214C1730021BC29 /* LaunchScreen.storyboard */,
 				DAA91A942214C1730021BC29 /* Info.plist */,
 			);
@@ -304,7 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAA91A932214C1730021BC29 /* LaunchScreen.storyboard in Resources */,
-				DAA91A902214C1730021BC29 /* Assets.xcassets in Resources */,
+				DA03DF3F221A3E85000180B6 /* Assets.xcassets in Resources */,
 				DAA91A8E2214C1710021BC29 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
