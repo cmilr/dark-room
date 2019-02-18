@@ -16,6 +16,8 @@ class MasterViewController: UIViewController {
    @IBOutlet weak var collectionViewYConstraint: NSLayoutConstraint!
    @IBOutlet weak var segmentedControlYConstraint: NSLayoutConstraint!
    var imageCache = [String: UIImage?]()
+   var nowPlayingMovies = [Movie]()
+   var upcomingMovies = [Movie]()
    var movies = [Movie]()
    var currentCell = 0
    var nowPlaying = true
@@ -29,7 +31,7 @@ class MasterViewController: UIViewController {
 
    override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
-      loadMovies()
+      loadMovies(into: &movies)
       centerCurrentCell()
    }
 
@@ -50,26 +52,18 @@ class MasterViewController: UIViewController {
       }
    }
 
-   private func configureGradient() {
-      if let colorOne = UIColor(named: "moviePurple")?.cgColor,
-         let colorTwo = UIColor(named: "movieDarkPurple")?.cgColor {
-         let gradient = CAGradientLayer(start: .topLeft, end: .bottomRight, colors: [colorOne, colorTwo], type: .axial)
-         gradient.frame = view.bounds
-         view.layer.insertSublayer(gradient, at: 0)
-      }
-   }
-
    @IBAction func didChooseMovieType(_ sender: UISegmentedControl) {
       if sender.selectedSegmentIndex == 0 {
          nowPlaying = true
+         loadMovies(into: &nowPlayingMovies)
       } else {
          nowPlaying = false
+         loadMovies(into: &upcomingMovies)
       }
       switchingCategories = true
-      loadMovies()
    }
 
-   private func loadMovies() {
+   private func loadMovies(into movies: inout [Movie]) {
       activityIndicator.startAnimating()
       activityIndicator.isHidden = false
       let baseURL = nowPlaying ? BaseURL.nowPlaying : BaseURL.upcoming
@@ -125,6 +119,15 @@ class MasterViewController: UIViewController {
          flowLayout.minimumLineSpacing = CGFloat(20.0)
          flowLayout.sectionInset.left = leftSectionInset
          flowLayout.sectionInset.right = rightSectionInset
+      }
+   }
+
+   private func configureGradient() {
+      if let colorOne = UIColor(named: "moviePurple")?.cgColor,
+         let colorTwo = UIColor(named: "movieDarkPurple")?.cgColor {
+         let gradient = CAGradientLayer(start: .topLeft, end: .bottomRight, colors: [colorOne, colorTwo], type: .axial)
+         gradient.frame = view.bounds
+         view.layer.insertSublayer(gradient, at: 0)
       }
    }
 
@@ -206,8 +209,7 @@ extension MasterViewController: UICollectionViewDelegate {
    func scrollViewDidScroll(_ scrollView: UIScrollView) {
       let reloadDistance = CGFloat(-75.0)
       if collectionView.contentOffset.x < reloadDistance {
-         print("Load movies")
-         loadMovies()
+         loadMovies(into: &movies)
       }
    }
 }
