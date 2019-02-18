@@ -22,6 +22,7 @@ class MasterViewController: UIViewController {
    var currentCell = 0
    var nowPlaying = true
    var switchingCategories = false
+   var dataBeingRefreshed = false
 
    override func viewDidLoad() {
       super.viewDidLoad()
@@ -94,6 +95,34 @@ class MasterViewController: UIViewController {
       }
    }
 
+   private func loadImage(for movie: Movie, into cell: MovieCell, at indexPath: IndexPath) {
+      guard let urlString = movie.composedPosterPath else {
+         return
+      }
+      if let cachedImage = imageCache[urlString] {
+         cell.movieImageView.image = cachedImage
+         if !dataBeingRefreshed {
+            self.activityIndicator.isHidden = true
+            self.activityIndicator.stopAnimating()
+         }
+      } else {
+         NetworkManager.shared.imageFrom(urlString) { (image, error) in
+            guard error == nil else {
+               print(error!)
+               return
+            }
+            self.imageCache[urlString] = image
+            DispatchQueue.main.async { [] in
+               if !self.dataBeingRefreshed {
+                  self.activityIndicator.isHidden = true
+                  self.activityIndicator.stopAnimating()
+               }
+               cell.movieImageView.transition(toImage: image)
+            }
+         }
+      }
+   }
+
    private func configureLayout() {
       // Default offset settings
       var widthOffset: CGFloat = 40.0
@@ -140,30 +169,6 @@ class MasterViewController: UIViewController {
       }
    }
 
-   private func loadImage(for movie: Movie, into cell: MovieCell, at indexPath: IndexPath) {
-      guard let urlString = movie.composedPosterPath else {
-         return
-      }
-      if let cachedImage = imageCache[urlString] {
-         cell.movieImageView.image = cachedImage
-         self.activityIndicator.stopAnimating()
-         self.activityIndicator.isHidden = true
-      } else {
-         NetworkManager.shared.imageFrom(urlString) { (image, error) in
-            guard error == nil else {
-               print(error!)
-               return
-            }
-            self.imageCache[urlString] = image
-            DispatchQueue.main.async { [] in
-               self.activityIndicator.stopAnimating()
-               self.activityIndicator.isHidden = true
-               cell.movieImageView.transition(toImage: image)
-            }
-         }
-      }
-   }
-
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == "showMovieDetail"{
          if let detailPage = segue.destination as? DetailViewController,
@@ -207,9 +212,17 @@ extension MasterViewController: UICollectionViewDelegate {
 
    // Custom refresh control for horizontal UICollectionViews.
    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-      let reloadDistance = CGFloat(-75.0)
+      let reloadDistance = CGFloat(-50.0)
       if collectionView.contentOffset.x < reloadDistance {
-         loadMovies(into: &movies)
+         activityIndicator.isHidden = false
+         activityIndicator.startAnimating()
+         dataBeingRefreshed = true
+         DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+            self.loadMovies(into: &self.movies)
+            self.activityIndicator.isHidden = true
+            self.activityIndicator.stopAnimating()
+            self.dataBeingRefreshed = false
+         }
       }
    }
 }
