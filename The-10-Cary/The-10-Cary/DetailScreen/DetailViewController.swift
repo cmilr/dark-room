@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
    @IBOutlet weak var overviewTextView: UITextView!
    @IBOutlet weak var posterImageView: UIImageView!
    @IBOutlet weak var backButtonImageView: UIImageView!
-
+    
    var movie = Movie()
    var imageCache = [String: UIImage?]()
 
@@ -61,8 +61,8 @@ class DetailViewController: UIViewController {
 
    private func setOverview() {
       if let overview = movie.overview {
-         let adjustedFontSize = CGFloat(18.0)
-         let adjustedLineSpacing = CGFloat(10.0)
+         let fontSize = CGFloat(18.0)
+         let lineSpacing = CGFloat(10.0)
 
          // Configure font style.
          let font = "System Font Regular"
@@ -70,22 +70,20 @@ class DetailViewController: UIViewController {
 
          // Configure paragraph style.
          let paragraphStyle = NSMutableParagraphStyle()
-         paragraphStyle.lineSpacing = adjustedLineSpacing
+         paragraphStyle.lineSpacing = lineSpacing
          paragraphStyle.alignment = .left
          paragraphStyle.lineBreakMode = .byWordWrapping
 
          // Apply font and paragraph styles.
          let attributes = [
             NSAttributedString.Key.paragraphStyle: paragraphStyle,
-            NSAttributedString.Key.font: UIFont(name: font, size: adjustedFontSize)!,
+            NSAttributedString.Key.font: UIFont(name: font, size: fontSize)!,
             NSAttributedString.Key.foregroundColor: fontColor
          ]
          overviewTextView.attributedText = NSAttributedString(string: overview , attributes: attributes)
 
          overviewTextView.indicatorStyle = .white
-         overviewTextView.scrollIndicatorInsets = UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
          overviewTextView.setContentOffset(CGPoint.zero, animated: false)
-
          DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.overviewTextView.flashScrollIndicators()
          }
