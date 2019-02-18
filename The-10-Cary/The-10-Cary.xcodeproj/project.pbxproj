@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA03DF3722162F41000180B6 /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03DF3622162F41000180B6 /* UILabel+Ext.swift */; };
 		DA03DF3C22174381000180B6 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03DF3A22174381000180B6 /* Genres.swift */; };
 		DA03DF3D22174381000180B6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA03DF3B22174381000180B6 /* Movie.swift */; };
 		DA03DF3F221A3E85000180B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA03DF3E221A3E84000180B6 /* Assets.xcassets */; };
@@ -23,7 +22,6 @@
 		DAA91AC22214F8D80021BC29 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AC02214F8D80021BC29 /* UIImageView+Ext.swift */; };
 		DAA91AC32214F8D80021BC29 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AC12214F8D80021BC29 /* Result.swift */; };
 		DAA91AC522152FE50021BC29 /* RESTful.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AC422152FE50021BC29 /* RESTful.swift */; };
-		DAA91AC722154B720021BC29 /* MovieDBConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AC622154B720021BC29 /* MovieDBConfig.swift */; };
 		DAA91ACD221606CD0021BC29 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91ACC221606CD0021BC29 /* DetailViewController.swift */; };
 		DAA91AD0221615CE0021BC29 /* CAGradientLayer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91ACF221615CE0021BC29 /* CAGradientLayer+Ext.swift */; };
 /* End PBXBuildFile section */
@@ -46,7 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA03DF3622162F41000180B6 /* UILabel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
 		DA03DF3A22174381000180B6 /* Genres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Genres.swift; path = "The-10-Cary/Model/Genres.swift"; sourceTree = SOURCE_ROOT; };
 		DA03DF3B22174381000180B6 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = "The-10-Cary/Model/Movie.swift"; sourceTree = SOURCE_ROOT; };
 		DA03DF3E221A3E84000180B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,7 +65,6 @@
 		DAA91AC02214F8D80021BC29 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		DAA91AC12214F8D80021BC29 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		DAA91AC422152FE50021BC29 /* RESTful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTful.swift; sourceTree = "<group>"; };
-		DAA91AC622154B720021BC29 /* MovieDBConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieDBConfig.swift; path = "The-10-Cary/Networking/MovieDBConfig.swift"; sourceTree = SOURCE_ROOT; };
 		DAA91ACC221606CD0021BC29 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DAA91ACF221615CE0021BC29 /* CAGradientLayer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,14 +119,14 @@
 			children = (
 				DAA91A882214C1700021BC29 /* AppDelegate.swift */,
 				DAA91A8C2214C1710021BC29 /* Main.storyboard */,
+				DAA91A912214C1730021BC29 /* LaunchScreen.storyboard */,
+				DAA91A942214C1730021BC29 /* Info.plist */,
 				DA03DF3E221A3E84000180B6 /* Assets.xcassets */,
 				DAA91AB82214C6340021BC29 /* MasterScreen */,
 				DAA91ACE221606DE0021BC29 /* DetailScreen */,
 				DAA91ABD2214F6980021BC29 /* Model */,
 				DAA91AC82215BA8B0021BC29 /* Networking */,
 				DAA91AC92215BACC0021BC29 /* Extensions */,
-				DAA91A912214C1730021BC29 /* LaunchScreen.storyboard */,
-				DAA91A942214C1730021BC29 /* Info.plist */,
 			);
 			path = "The-10-Cary";
 			sourceTree = "<group>";
@@ -165,8 +161,8 @@
 		DAA91ABD2214F6980021BC29 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DA03DF3A22174381000180B6 /* Genres.swift */,
 				DA03DF3B22174381000180B6 /* Movie.swift */,
+				DA03DF3A22174381000180B6 /* Genres.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,7 +172,6 @@
 			children = (
 				DAA91ABE2214F73F0021BC29 /* NetworkManager.swift */,
 				DAA91AC422152FE50021BC29 /* RESTful.swift */,
-				DAA91AC622154B720021BC29 /* MovieDBConfig.swift */,
 				DAA91AC12214F8D80021BC29 /* Result.swift */,
 			);
 			path = Networking;
@@ -187,7 +182,6 @@
 			children = (
 				DAA91AC02214F8D80021BC29 /* UIImageView+Ext.swift */,
 				DAA91ACF221615CE0021BC29 /* CAGradientLayer+Ext.swift */,
-				DA03DF3622162F41000180B6 /* UILabel+Ext.swift */,
 				DA3230AD221AA0730097B9FD /* UIView+Ext.swift */,
 			);
 			path = Extensions;
@@ -332,7 +326,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAA91AC722154B720021BC29 /* MovieDBConfig.swift in Sources */,
 				DAA91AC22214F8D80021BC29 /* UIImageView+Ext.swift in Sources */,
 				DAA91A8B2214C1710021BC29 /* MasterViewController.swift in Sources */,
 				DAA91A892214C1700021BC29 /* AppDelegate.swift in Sources */,
@@ -343,7 +336,6 @@
 				DAA91ACD221606CD0021BC29 /* DetailViewController.swift in Sources */,
 				DA03DF3C22174381000180B6 /* Genres.swift in Sources */,
 				DAA91AD0221615CE0021BC29 /* CAGradientLayer+Ext.swift in Sources */,
-				DA03DF3722162F41000180B6 /* UILabel+Ext.swift in Sources */,
 				DAA91AB72214C2FD0021BC29 /* MovieCell.swift in Sources */,
 				DA03DF3D22174381000180B6 /* Movie.swift in Sources */,
 			);
