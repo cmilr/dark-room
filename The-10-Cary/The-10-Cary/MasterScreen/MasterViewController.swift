@@ -10,6 +10,7 @@ import UIKit
 
 class MasterViewController: UIViewController {
 
+   @IBOutlet weak var swipeImageView: UIImageView!
    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
    @IBOutlet weak var collectionView: UICollectionView!
    @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -28,6 +29,7 @@ class MasterViewController: UIViewController {
       super.viewDidLoad()
       collectionView.dataSource = self
       collectionView.delegate = self
+      showSwipeImage()
    }
 
    override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +43,7 @@ class MasterViewController: UIViewController {
       configureLayout()
       configureGradient()
       configureSegmentedControl()
+      collectionView.flashScrollIndicators()
    }
 
    private func centerCurrentCell() {
@@ -120,6 +123,14 @@ class MasterViewController: UIViewController {
                cell.movieImageView.transition(toImage: image)
             }
          }
+      }
+   }
+
+   private func showSwipeImage() {
+      swipeImageView.isHidden = false
+      swipeImageView.fadeIn(1, delay: 1)
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+         self.swipeImageView.fadeOut(1, delay: 0)
       }
    }
 
