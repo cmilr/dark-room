@@ -44,20 +44,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA03DF3A22174381000180B6 /* Genres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Genres.swift; path = "The-10-Cary/Model/Genres.swift"; sourceTree = SOURCE_ROOT; };
-		DA03DF3B22174381000180B6 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = "The-10-Cary/Model/Movie.swift"; sourceTree = SOURCE_ROOT; };
+		DA03DF3A22174381000180B6 /* Genres.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Genres.swift; path = DarkRoom/Model/Genres.swift; sourceTree = SOURCE_ROOT; };
+		DA03DF3B22174381000180B6 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = DarkRoom/Model/Movie.swift; sourceTree = SOURCE_ROOT; };
 		DA03DF3E221A3E84000180B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA3230AD221AA0730097B9FD /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
-		DAA91A852214C1700021BC29 /* The-10-Cary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-10-Cary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAA91A852214C1700021BC29 /* DarkRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA91A882214C1700021BC29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAA91A8A2214C1710021BC29 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		DAA91A8D2214C1710021BC29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DAA91A922214C1730021BC29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAA91A942214C1730021BC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAA91A992214C1730021BC29 /* The-10-CaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The-10-CaryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAA91A992214C1730021BC29 /* DarkRoomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkRoomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA91A9D2214C1730021BC29 /* The_10_CaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_10_CaryTests.swift; sourceTree = "<group>"; };
 		DAA91A9F2214C1730021BC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAA91AA42214C1730021BC29 /* The-10-CaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The-10-CaryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAA91AA42214C1730021BC29 /* DarkRoomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkRoomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA91AA82214C1730021BC29 /* The_10_CaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_10_CaryUITests.swift; sourceTree = "<group>"; };
 		DAA91AAA2214C1730021BC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA91AB62214C2FD0021BC29 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
@@ -97,9 +97,9 @@
 		DAA91A7C2214C1700021BC29 = {
 			isa = PBXGroup;
 			children = (
-				DAA91A872214C1700021BC29 /* The-10-Cary */,
-				DAA91A9C2214C1730021BC29 /* The-10-CaryTests */,
-				DAA91AA72214C1730021BC29 /* The-10-CaryUITests */,
+				DAA91A872214C1700021BC29 /* DarkRoom */,
+				DAA91A9C2214C1730021BC29 /* DarkRoomTests */,
+				DAA91AA72214C1730021BC29 /* DarkRoomUITests */,
 				DAA91A862214C1700021BC29 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,14 +107,14 @@
 		DAA91A862214C1700021BC29 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DAA91A852214C1700021BC29 /* The-10-Cary.app */,
-				DAA91A992214C1730021BC29 /* The-10-CaryTests.xctest */,
-				DAA91AA42214C1730021BC29 /* The-10-CaryUITests.xctest */,
+				DAA91A852214C1700021BC29 /* DarkRoom.app */,
+				DAA91A992214C1730021BC29 /* DarkRoomTests.xctest */,
+				DAA91AA42214C1730021BC29 /* DarkRoomUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DAA91A872214C1700021BC29 /* The-10-Cary */ = {
+		DAA91A872214C1700021BC29 /* DarkRoom */ = {
 			isa = PBXGroup;
 			children = (
 				DAA91A882214C1700021BC29 /* AppDelegate.swift */,
@@ -128,25 +128,25 @@
 				DAA91AC82215BA8B0021BC29 /* Networking */,
 				DAA91AC92215BACC0021BC29 /* Extensions */,
 			);
-			path = "The-10-Cary";
+			path = DarkRoom;
 			sourceTree = "<group>";
 		};
-		DAA91A9C2214C1730021BC29 /* The-10-CaryTests */ = {
+		DAA91A9C2214C1730021BC29 /* DarkRoomTests */ = {
 			isa = PBXGroup;
 			children = (
 				DAA91A9D2214C1730021BC29 /* The_10_CaryTests.swift */,
 				DAA91A9F2214C1730021BC29 /* Info.plist */,
 			);
-			path = "The-10-CaryTests";
+			path = DarkRoomTests;
 			sourceTree = "<group>";
 		};
-		DAA91AA72214C1730021BC29 /* The-10-CaryUITests */ = {
+		DAA91AA72214C1730021BC29 /* DarkRoomUITests */ = {
 			isa = PBXGroup;
 			children = (
 				DAA91AA82214C1730021BC29 /* The_10_CaryUITests.swift */,
 				DAA91AAA2214C1730021BC29 /* Info.plist */,
 			);
-			path = "The-10-CaryUITests";
+			path = DarkRoomUITests;
 			sourceTree = "<group>";
 		};
 		DAA91AB82214C6340021BC29 /* MasterScreen */ = {
@@ -198,9 +198,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DAA91A842214C1700021BC29 /* The-10-Cary */ = {
+		DAA91A842214C1700021BC29 /* DarkRoom */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DAA91AAD2214C1730021BC29 /* Build configuration list for PBXNativeTarget "The-10-Cary" */;
+			buildConfigurationList = DAA91AAD2214C1730021BC29 /* Build configuration list for PBXNativeTarget "DarkRoom" */;
 			buildPhases = (
 				DAA91A812214C1700021BC29 /* Sources */,
 				DAA91A822214C1700021BC29 /* Frameworks */,
@@ -210,14 +210,14 @@
 			);
 			dependencies = (
 			);
-			name = "The-10-Cary";
+			name = DarkRoom;
 			productName = "The-10-Cary";
-			productReference = DAA91A852214C1700021BC29 /* The-10-Cary.app */;
+			productReference = DAA91A852214C1700021BC29 /* DarkRoom.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DAA91A982214C1730021BC29 /* The-10-CaryTests */ = {
+		DAA91A982214C1730021BC29 /* DarkRoomTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DAA91AB02214C1730021BC29 /* Build configuration list for PBXNativeTarget "The-10-CaryTests" */;
+			buildConfigurationList = DAA91AB02214C1730021BC29 /* Build configuration list for PBXNativeTarget "DarkRoomTests" */;
 			buildPhases = (
 				DAA91A952214C1730021BC29 /* Sources */,
 				DAA91A962214C1730021BC29 /* Frameworks */,
@@ -228,14 +228,14 @@
 			dependencies = (
 				DAA91A9B2214C1730021BC29 /* PBXTargetDependency */,
 			);
-			name = "The-10-CaryTests";
+			name = DarkRoomTests;
 			productName = "The-10-CaryTests";
-			productReference = DAA91A992214C1730021BC29 /* The-10-CaryTests.xctest */;
+			productReference = DAA91A992214C1730021BC29 /* DarkRoomTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DAA91AA32214C1730021BC29 /* The-10-CaryUITests */ = {
+		DAA91AA32214C1730021BC29 /* DarkRoomUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DAA91AB32214C1730021BC29 /* Build configuration list for PBXNativeTarget "The-10-CaryUITests" */;
+			buildConfigurationList = DAA91AB32214C1730021BC29 /* Build configuration list for PBXNativeTarget "DarkRoomUITests" */;
 			buildPhases = (
 				DAA91AA02214C1730021BC29 /* Sources */,
 				DAA91AA12214C1730021BC29 /* Frameworks */,
@@ -246,9 +246,9 @@
 			dependencies = (
 				DAA91AA62214C1730021BC29 /* PBXTargetDependency */,
 			);
-			name = "The-10-CaryUITests";
+			name = DarkRoomUITests;
 			productName = "The-10-CaryUITests";
-			productReference = DAA91AA42214C1730021BC29 /* The-10-CaryUITests.xctest */;
+			productReference = DAA91AA42214C1730021BC29 /* DarkRoomUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -274,7 +274,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DAA91A802214C1700021BC29 /* Build configuration list for PBXProject "The-10-Cary" */;
+			buildConfigurationList = DAA91A802214C1700021BC29 /* Build configuration list for PBXProject "DarkRoom" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -287,9 +287,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DAA91A842214C1700021BC29 /* The-10-Cary */,
-				DAA91A982214C1730021BC29 /* The-10-CaryTests */,
-				DAA91AA32214C1730021BC29 /* The-10-CaryUITests */,
+				DAA91A842214C1700021BC29 /* DarkRoom */,
+				DAA91A982214C1730021BC29 /* DarkRoomTests */,
+				DAA91AA32214C1730021BC29 /* DarkRoomUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -362,12 +362,12 @@
 /* Begin PBXTargetDependency section */
 		DAA91A9B2214C1730021BC29 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DAA91A842214C1700021BC29 /* The-10-Cary */;
+			target = DAA91A842214C1700021BC29 /* DarkRoom */;
 			targetProxy = DAA91A9A2214C1730021BC29 /* PBXContainerItemProxy */;
 		};
 		DAA91AA62214C1730021BC29 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DAA91A842214C1700021BC29 /* The-10-Cary */;
+			target = DAA91A842214C1700021BC29 /* DarkRoom */;
 			targetProxy = DAA91AA52214C1730021BC29 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -514,12 +514,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7KMYQN6GY;
-				INFOPLIST_FILE = "The-10-Cary/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DarkRoom/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cmillerco.The-10-Cary";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cmillerco.dark-room";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -532,12 +532,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7KMYQN6GY;
-				INFOPLIST_FILE = "The-10-Cary/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DarkRoom/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cmillerco.The-10-Cary";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cmillerco.dark-room";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -561,7 +561,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The-10-Cary.app/The-10-Cary";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkRoom.app/DarkRoom";
 			};
 			name = Debug;
 		};
@@ -582,7 +582,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The-10-Cary.app/The-10-Cary";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkRoom.app/DarkRoom";
 			};
 			name = Release;
 		};
@@ -629,7 +629,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DAA91A802214C1700021BC29 /* Build configuration list for PBXProject "The-10-Cary" */ = {
+		DAA91A802214C1700021BC29 /* Build configuration list for PBXProject "DarkRoom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAA91AAB2214C1730021BC29 /* Debug */,
@@ -638,7 +638,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DAA91AAD2214C1730021BC29 /* Build configuration list for PBXNativeTarget "The-10-Cary" */ = {
+		DAA91AAD2214C1730021BC29 /* Build configuration list for PBXNativeTarget "DarkRoom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAA91AAE2214C1730021BC29 /* Debug */,
@@ -647,7 +647,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DAA91AB02214C1730021BC29 /* Build configuration list for PBXNativeTarget "The-10-CaryTests" */ = {
+		DAA91AB02214C1730021BC29 /* Build configuration list for PBXNativeTarget "DarkRoomTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAA91AB12214C1730021BC29 /* Debug */,
@@ -656,7 +656,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DAA91AB32214C1730021BC29 /* Build configuration list for PBXNativeTarget "The-10-CaryUITests" */ = {
+		DAA91AB32214C1730021BC29 /* Build configuration list for PBXNativeTarget "DarkRoomUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAA91AB42214C1730021BC29 /* Debug */,
