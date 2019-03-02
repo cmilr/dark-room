@@ -1,6 +1,6 @@
 //
-//  The_10_CaryUITests.swift
-//  The-10-CaryUITests
+//  DarkRoomUITests.swift
+//  DarkRoom
 //
 //  Created by Cary Miller on 2/13/19.
 //  Copyright © 2019 C.Miller & Co. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class The_10_CaryUITests: XCTestCase {
+class DarkRoomUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
