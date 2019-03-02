@@ -1,4 +1,4 @@
-<img src="Images/Darkroom.gif" width="250" align="centered" title="Darkroom GIF"><br><br>
+<img src="Images/DarkRoomMaster.png" width="250" align="center" title="Darkroom GIF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Images/DarkRoomDetail.png" width="250" align="center" title="Darkroom GIF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Images/Darkroom.gif" width="250" align="center" title="Darkroom GIF"><br><br>
 
 # DarkRoom
 
