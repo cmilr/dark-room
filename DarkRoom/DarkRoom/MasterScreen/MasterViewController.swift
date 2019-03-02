@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  The-10-Cary
+//  DarkRoom
 //
 //  Created by Cary Miller on 2/13/19.
 //  Copyright © 2019 C.Miller & Co. All rights reserved.
@@ -107,9 +107,7 @@ class MasterViewController: UIViewController {
          DispatchQueue.main.async {
             self.collectionView.reloadData()
 
-            // If switching between 'Now Playing' & 'Upcoming',
-            // scroll to first cell, then center in view.
-            if self.movies.count > 0, self.switchingCategories {
+            if self.switchingCategories, self.movies.count > 0 {
                self.collectionView.scrollToItem(
                   at: IndexPath(row: 0, section: 0),
                   at: .centeredHorizontally,
@@ -138,7 +136,8 @@ class MasterViewController: UIViewController {
                return
             }
             self.imageCache[urlString] = image
-            DispatchQueue.main.async { [] in
+            DispatchQueue.main.async { [weak self] in
+               guard let self = self else { return }
                if !self.dataBeingRefreshed {
                   self.activityIndicator.isHidden = true
                   self.activityIndicator.stopAnimating()
@@ -150,15 +149,12 @@ class MasterViewController: UIViewController {
    }
 
    private func configureLayout() {
-      // Default offset settings
       var widthOffset: CGFloat = 40.0
       var heightOffset: CGFloat = 20.0
       var leftSectionInset: CGFloat = 20.00
       var rightSectionInset: CGFloat = 20.00
 
-      // If device is iPhone X or taller, zero-out all offsets to allow
-      // contentView cell to center and make use of taller screen.
-      if UIScreen.main.bounds.height >= 812 {
+      if UIScreen.main.bounds.height >= DeviceHeight.iPhoneX {
          widthOffset = 0
          heightOffset = 0
          leftSectionInset = 0
@@ -190,7 +186,7 @@ class MasterViewController: UIViewController {
       let font = UIFont.boldSystemFont(ofSize: 18)
       segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
       segmentedControl.layer.cornerRadius = 0.0
-      if UIScreen.main.bounds.height >= 812 {
+      if UIScreen.main.bounds.height >= DeviceHeight.iPhoneX {
          segmentedControlYConstraint.constant = 50
       }
    }
@@ -233,9 +229,7 @@ extension MasterViewController: UICollectionViewDataSource {
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as! MovieCell
       let movie = movies[indexPath.row]
-      cell.movieTitleLabel.text = movie.title
-      cell.movieImageView.image = UIImage(named: "image-placeholder")
-      cell.configure()
+      cell.configure(with: movie)
       loadImage(for: movie, into: cell, at: indexPath)
 
       return cell

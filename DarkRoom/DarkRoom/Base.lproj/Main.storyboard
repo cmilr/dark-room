@@ -39,7 +39,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="lde-Bg-Bin">
                                                     <rect key="frame" x="0.0" y="0.0" width="312" height="349"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COx-6t-p97">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COx-6t-p97">
                                                     <rect key="frame" x="90" y="354" width="132" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,7 +154,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="vhT-Me-DrM" userLabel="Container Stack View">
                                 <rect key="frame" x="20" y="75" width="374" height="641"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="341-uf-TZA" userLabel="Header">
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="341-uf-TZA" userLabel="Header">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="234"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="xrA-Vg-akF">
@@ -164,7 +164,7 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="4fS-0w-9vv" userLabel="Stats">
-                                                <rect key="frame" x="169" y="75" width="205" height="83.666666666666686"/>
+                                                <rect key="frame" x="173" y="75" width="201" height="83.666666666666686"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DwI-Yi-2GH">
                                                         <rect key="frame" x="0.0" y="0.0" width="116.66666666666667" height="26.333333333333332"/>

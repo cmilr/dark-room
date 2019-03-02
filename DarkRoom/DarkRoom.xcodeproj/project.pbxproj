@@ -15,8 +15,8 @@
 		DAA91A8B2214C1710021BC29 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91A8A2214C1710021BC29 /* MasterViewController.swift */; };
 		DAA91A8E2214C1710021BC29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA91A8C2214C1710021BC29 /* Main.storyboard */; };
 		DAA91A932214C1730021BC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA91A912214C1730021BC29 /* LaunchScreen.storyboard */; };
-		DAA91A9E2214C1730021BC29 /* The_10_CaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91A9D2214C1730021BC29 /* The_10_CaryTests.swift */; };
-		DAA91AA92214C1730021BC29 /* The_10_CaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AA82214C1730021BC29 /* The_10_CaryUITests.swift */; };
+		DAA91A9E2214C1730021BC29 /* DarkRoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91A9D2214C1730021BC29 /* DarkRoomTests.swift */; };
+		DAA91AA92214C1730021BC29 /* DarkRoomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AA82214C1730021BC29 /* DarkRoomUITests.swift */; };
 		DAA91AB72214C2FD0021BC29 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AB62214C2FD0021BC29 /* MovieCell.swift */; };
 		DAA91ABF2214F7400021BC29 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91ABE2214F73F0021BC29 /* NetworkManager.swift */; };
 		DAA91AC22214F8D80021BC29 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AC02214F8D80021BC29 /* UIImageView+Ext.swift */; };
@@ -24,6 +24,8 @@
 		DAA91AC522152FE50021BC29 /* RESTful.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91AC422152FE50021BC29 /* RESTful.swift */; };
 		DAA91ACD221606CD0021BC29 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91ACC221606CD0021BC29 /* DetailViewController.swift */; };
 		DAA91AD0221615CE0021BC29 /* CAGradientLayer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA91ACF221615CE0021BC29 /* CAGradientLayer+Ext.swift */; };
+		DAE7C78B2229C428009DF4A7 /* DeviceSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE7C78A2229C428009DF4A7 /* DeviceSizes.swift */; };
+		DAE7C78D222A4B26009DF4A7 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE7C78C222A4B26009DF4A7 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +57,10 @@
 		DAA91A922214C1730021BC29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAA91A942214C1730021BC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA91A992214C1730021BC29 /* DarkRoomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkRoomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAA91A9D2214C1730021BC29 /* The_10_CaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_10_CaryTests.swift; sourceTree = "<group>"; };
+		DAA91A9D2214C1730021BC29 /* DarkRoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkRoomTests.swift; sourceTree = "<group>"; };
 		DAA91A9F2214C1730021BC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA91AA42214C1730021BC29 /* DarkRoomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkRoomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAA91AA82214C1730021BC29 /* The_10_CaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_10_CaryUITests.swift; sourceTree = "<group>"; };
+		DAA91AA82214C1730021BC29 /* DarkRoomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkRoomUITests.swift; sourceTree = "<group>"; };
 		DAA91AAA2214C1730021BC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA91AB62214C2FD0021BC29 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		DAA91ABE2214F73F0021BC29 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -67,6 +69,8 @@
 		DAA91AC422152FE50021BC29 /* RESTful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTful.swift; sourceTree = "<group>"; };
 		DAA91ACC221606CD0021BC29 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DAA91ACF221615CE0021BC29 /* CAGradientLayer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Ext.swift"; sourceTree = "<group>"; };
+		DAE7C78A2229C428009DF4A7 /* DeviceSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSizes.swift; sourceTree = "<group>"; };
+		DAE7C78C222A4B26009DF4A7 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 				DAA91ABD2214F6980021BC29 /* Model */,
 				DAA91AC82215BA8B0021BC29 /* Networking */,
 				DAA91AC92215BACC0021BC29 /* Extensions */,
+				DAE7C78C222A4B26009DF4A7 /* Secrets.swift */,
 			);
 			path = DarkRoom;
 			sourceTree = "<group>";
@@ -134,7 +139,7 @@
 		DAA91A9C2214C1730021BC29 /* DarkRoomTests */ = {
 			isa = PBXGroup;
 			children = (
-				DAA91A9D2214C1730021BC29 /* The_10_CaryTests.swift */,
+				DAA91A9D2214C1730021BC29 /* DarkRoomTests.swift */,
 				DAA91A9F2214C1730021BC29 /* Info.plist */,
 			);
 			path = DarkRoomTests;
@@ -143,7 +148,7 @@
 		DAA91AA72214C1730021BC29 /* DarkRoomUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DAA91AA82214C1730021BC29 /* The_10_CaryUITests.swift */,
+				DAA91AA82214C1730021BC29 /* DarkRoomUITests.swift */,
 				DAA91AAA2214C1730021BC29 /* Info.plist */,
 			);
 			path = DarkRoomUITests;
@@ -183,6 +188,7 @@
 				DAA91AC02214F8D80021BC29 /* UIImageView+Ext.swift */,
 				DAA91ACF221615CE0021BC29 /* CAGradientLayer+Ext.swift */,
 				DA3230AD221AA0730097B9FD /* UIView+Ext.swift */,
+				DAE7C78A2229C428009DF4A7 /* DeviceSizes.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -333,7 +339,9 @@
 				DAA91AC522152FE50021BC29 /* RESTful.swift in Sources */,
 				DAA91ABF2214F7400021BC29 /* NetworkManager.swift in Sources */,
 				DAA91AC32214F8D80021BC29 /* Result.swift in Sources */,
+				DAE7C78B2229C428009DF4A7 /* DeviceSizes.swift in Sources */,
 				DAA91ACD221606CD0021BC29 /* DetailViewController.swift in Sources */,
+				DAE7C78D222A4B26009DF4A7 /* Secrets.swift in Sources */,
 				DA03DF3C22174381000180B6 /* Genres.swift in Sources */,
 				DAA91AD0221615CE0021BC29 /* CAGradientLayer+Ext.swift in Sources */,
 				DAA91AB72214C2FD0021BC29 /* MovieCell.swift in Sources */,
@@ -345,7 +353,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAA91A9E2214C1730021BC29 /* The_10_CaryTests.swift in Sources */,
+				DAA91A9E2214C1730021BC29 /* DarkRoomTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAA91AA92214C1730021BC29 /* The_10_CaryUITests.swift in Sources */,
+				DAA91AA92214C1730021BC29 /* DarkRoomUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,13 +559,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7KMYQN6GY;
-				INFOPLIST_FILE = "The-10-CaryTests/Info.plist";
+				INFOPLIST_FILE = DarkRoomTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cmillerco.The-10-CaryTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmillerco.DarkRoomTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -572,13 +580,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7KMYQN6GY;
-				INFOPLIST_FILE = "The-10-CaryTests/Info.plist";
+				INFOPLIST_FILE = DarkRoomTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cmillerco.The-10-CaryTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmillerco.DarkRoomTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -592,13 +600,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7KMYQN6GY;
-				INFOPLIST_FILE = "The-10-CaryUITests/Info.plist";
+				INFOPLIST_FILE = DarkRoomUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cmillerco.The-10-CaryUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmillerco.DarkRoomUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -612,13 +620,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7KMYQN6GY;
-				INFOPLIST_FILE = "The-10-CaryUITests/Info.plist";
+				INFOPLIST_FILE = DarkRoomUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cmillerco.The-10-CaryUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmillerco.DarkRoomUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

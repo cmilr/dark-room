@@ -1,6 +1,6 @@
 //
 //  DetailViewController.swift
-//  The-10-Cary
+//  DarkRoom
 //
 //  Created by Cary Miller on 2/14/19.
 //  Copyright © 2019 C.Miller & Co. All rights reserved.
@@ -71,8 +71,18 @@ class DetailViewController: UIViewController {
 
    private func setOverview() {
       if let overview = movie.overview {
-         let fontSize = CGFloat(18.0)
-         let lineSpacing = CGFloat(10.0)
+
+         // Configure font size and line spacing.
+         var fontSize: CGFloat
+         var lineSpacing: CGFloat
+
+         if UIScreen.main.bounds.height >= DeviceHeight.iPhoneX {
+            fontSize = 22
+            lineSpacing = 14
+         } else {
+            fontSize = 18
+            lineSpacing = 10
+         }
 
          // Configure font style.
          let font = "System Font Regular"
@@ -101,6 +111,12 @@ class DetailViewController: UIViewController {
    }
 
    private func setPoster() {
+      posterImageView.layer.masksToBounds = false
+      posterImageView.layer.shadowColor = UIColor.black.cgColor
+      posterImageView.layer.shadowOpacity = 0.7
+      posterImageView.layer.shadowOffset = CGSize(width: 7, height: 7)
+      posterImageView.layer.shadowRadius = 10
+
       guard let urlString = movie.composedPosterPath else {
          return
       }

@@ -1,6 +1,6 @@
 //
 //  MovieCell.swift
-//  The-10-Cary
+//  DarkRoom
 //
 //  Created by Cary Miller on 2/13/19.
 //  Copyright © 2019 C.Miller & Co. All rights reserved.
@@ -14,9 +14,13 @@ class MovieCell: UICollectionViewCell {
    @IBOutlet weak var movieTitleLabel: UILabel!
    @IBOutlet weak var movieTitleLabelYConstraint: NSLayoutConstraint!
 
-   func configure() {
-      if UIScreen.main.bounds.height >= 812 {
+   func configure(with movie: Movie) {
+      movieTitleLabel.text = movie.title
+      movieImageView.image = UIImage(named: "image-placeholder")
+
+      if UIScreen.main.bounds.height >= DeviceHeight.iPhoneX {
          movieTitleLabelYConstraint.constant = -30
+         movieTitleLabel.numberOfLines = 2
       }
    }
 }
