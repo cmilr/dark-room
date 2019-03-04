@@ -167,4 +167,5 @@ class NetworkManager {
         urlString.insert(Character("s"), at: insertIndex)
         return urlString
     }
+   
 }
