@@ -8,7 +8,7 @@ I'm quite happy with the final product—it was built entirely in Swift, no exte
 
 ## Usage
 
-If you'd like to poke around the code a bit you're welcome to, but you'll nee to supply your own copy of themoviedb.org's api key. To get a key, follow the directions on their [authentication page](https://developers.themoviedb.org/3/getting-started/authentication).
+If you'd like to poke around the code a bit you're welcome to, but you'll need to supply your own copy of themoviedb.org's api key. To get a key, follow the directions on their [authentication page](https://developers.themoviedb.org/3/getting-started/authentication). For demonstration purposes you can just provide the key as a global constant called ***apiKey***; that's what the NetworkingManager will be looking for. Enjoy!
 
 ## Contact Info:
 - Email: cary@cmillerco.com
