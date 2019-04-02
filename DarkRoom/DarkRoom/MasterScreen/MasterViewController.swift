@@ -142,7 +142,9 @@ class MasterViewController: UIViewController {
                   self.activityIndicator.isHidden = true
                   self.activityIndicator.stopAnimating()
                }
-               cell.movieImageView.transition(toImage: image)
+                if movie == self.movies[indexPath.row] {
+                    cell.movieImageView.transition(toImage: image)
+                }
             }
          }
       }

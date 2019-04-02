@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIImageView {
-   public func transition(toImage image: UIImage?) {
+   func transition(toImage image: UIImage?) {
       UIView.transition(
          with: self,
          duration: 0.3,
