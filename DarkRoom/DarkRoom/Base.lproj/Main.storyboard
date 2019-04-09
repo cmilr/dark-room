@@ -67,38 +67,52 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kpj-qy-aqH">
-                                <rect key="frame" x="20" y="42" width="374" height="29"/>
-                                <segments>
-                                    <segment title="Now Playing"/>
-                                    <segment title="Upcoming"/>
-                                </segments>
-                                <color key="tintColor" red="1" green="0.98509064327986395" blue="0.37726879205346187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="didChooseMovieType:" destination="BYZ-38-t0r" eventType="valueChanged" id="5wR-MS-APT"/>
-                                </connections>
-                            </segmentedControl>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="SXI-Qh-xgt">
                                 <rect key="frame" x="197" y="358" width="20" height="20"/>
                             </activityIndicatorView>
                             <imageView hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipe-left" translatesAutoresizingMaskIntoConstraints="NO" id="V7N-Kh-NKr" userLabel="Swipe Animation">
                                 <rect key="frame" x="50" y="12" width="314" height="712"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMF-Uw-bCP" customClass="BetterSegmentedControl" customModule="DarkRoom">
+                                <rect key="frame" x="0.0" y="42" width="414" height="40"/>
+                                <color key="backgroundColor" name="purple"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="z3g-Ap-6kL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="itemColor">
+                                        <color key="value" red="1" green="0.82258234799999996" blue="0.79898648650000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="itemBorderWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="itemBorderColor">
+                                        <color key="value" red="0.59607843140000005" green="0.85490196080000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didChooseBetterMovieType:" destination="BYZ-38-t0r" eventType="valueChanged" id="NU4-Yl-kOK"/>
+                                </connections>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.42632680384417898" green="0.28189982826617987" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="purple"/>
                         <constraints>
                             <constraint firstItem="o37-58-fjf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="57Q-zU-XEn"/>
+                            <constraint firstItem="eMF-Uw-bCP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HKh-sM-vxc"/>
+                            <constraint firstItem="SXI-Qh-xgt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JwL-2b-MVP"/>
+                            <constraint firstItem="eMF-Uw-bCP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Kgu-2C-yo4"/>
                             <constraint firstItem="V7N-Kh-NKr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LCb-09-v4s"/>
                             <constraint firstItem="o37-58-fjf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="61" id="RqU-no-Iou"/>
                             <constraint firstItem="SXI-Qh-xgt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="T8I-mJ-coL"/>
-                            <constraint firstItem="kpj-qy-aqH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="URv-X4-b5E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o37-58-fjf" secondAttribute="bottom" constant="149" id="ZaR-J1-E6V"/>
                             <constraint firstAttribute="trailing" secondItem="V7N-Kh-NKr" secondAttribute="trailing" constant="50" id="aLV-O6-bQY"/>
                             <constraint firstItem="o37-58-fjf" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.85" id="amO-eb-th9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kpj-qy-aqH" secondAttribute="trailing" constant="20" id="ivb-Xj-fcz"/>
-                            <constraint firstItem="SXI-Qh-xgt" firstAttribute="centerX" secondItem="kpj-qy-aqH" secondAttribute="centerX" id="klX-H8-dmx"/>
+                            <constraint firstItem="eMF-Uw-bCP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="iNw-jE-9rH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eMF-Uw-bCP" secondAttribute="trailing" id="ldY-nr-tNf"/>
                             <constraint firstAttribute="trailing" secondItem="o37-58-fjf" secondAttribute="trailing" id="spM-M5-vkf"/>
-                            <constraint firstItem="kpj-qy-aqH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="uoV-5X-v3J"/>
                             <constraint firstItem="V7N-Kh-NKr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="vjh-2D-FBh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -110,10 +124,10 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="SXI-Qh-xgt" id="DNn-Xx-B4B"/>
+                        <outlet property="betterSegmentedControl" destination="eMF-Uw-bCP" id="4mb-mL-87m"/>
+                        <outlet property="betterSegmentedControlYConstraint" destination="iNw-jE-9rH" id="9Rw-CG-paT"/>
                         <outlet property="collectionView" destination="o37-58-fjf" id="28S-9u-rkS"/>
                         <outlet property="collectionViewYConstraint" destination="RqU-no-Iou" id="xbP-OK-5Wg"/>
-                        <outlet property="segmentedControl" destination="kpj-qy-aqH" id="rKx-qh-k7o"/>
-                        <outlet property="segmentedControlYConstraint" destination="uoV-5X-v3J" id="UCS-2q-heM"/>
                         <outlet property="swipeImageView" destination="V7N-Kh-NKr" id="uxg-RY-TJ6"/>
                     </connections>
                 </viewController>
@@ -125,7 +139,7 @@
         <scene sceneID="ElX-hP-WQs">
             <objects>
                 <viewController id="T2v-P5-2XC" customClass="DetailViewController" customModule="DarkRoom" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="5q3-vI-HcK" userLabel="View">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="5q3-vI-HcK" userLabel="View" customClass="DetailScreenUIView" customModule="DarkRoom" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -157,7 +171,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="341-uf-TZA" userLabel="Header">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="234"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="xrA-Vg-akF">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="xrA-Vg-akF" customClass="PosterUIImageView" customModule="DarkRoom" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="156" height="234"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xrA-Vg-akF" secondAttribute="height" multiplier="1:1.5" id="mn3-zl-SEv"/>
@@ -188,7 +202,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="4Ri-BF-M91" userLabel="Footer">
+                                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="4Ri-BF-M91" userLabel="Footer" customClass="SynopsisUIView" customModule="DarkRoom" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="267" width="374" height="374"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9Q-hg-JpR">
@@ -213,18 +227,13 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" name="movieDarkPurple"/>
+                                        <color key="backgroundColor" name="purpleMedium"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Y9Q-hg-JpR" secondAttribute="trailing" constant="20" id="Cyv-Nb-VJy"/>
                                             <constraint firstAttribute="bottom" secondItem="Y9Q-hg-JpR" secondAttribute="bottom" constant="15" id="bZ1-V7-Gim"/>
                                             <constraint firstItem="Y9Q-hg-JpR" firstAttribute="top" secondItem="4Ri-BF-M91" secondAttribute="top" constant="15" id="fUz-tW-IHm"/>
                                             <constraint firstItem="Y9Q-hg-JpR" firstAttribute="leading" secondItem="4Ri-BF-M91" secondAttribute="leading" constant="20" id="jJS-Yh-amR"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -263,8 +272,11 @@
         <image name="image-placeholder" width="712" height="712"/>
         <image name="left-arrow" width="13" height="21"/>
         <image name="swipe-left" width="712" height="712"/>
-        <namedColor name="movieDarkPurple">
-            <color red="0.19599999487400055" green="0.063000001013278961" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="purple">
+            <color red="0.43137254901960786" green="0.44705882352941179" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="purpleMedium">
+            <color red="0.22745098039215686" green="0.15294117647058825" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
