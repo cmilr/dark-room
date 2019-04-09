@@ -1,6 +1,5 @@
 //
 //  Result.swift
-//  Result
 //
 //  Created by Cary Miller on 6/1/18.
 //  Copyright © 2018 C.Miller & Co. All rights reserved.
