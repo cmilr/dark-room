@@ -13,10 +13,8 @@ class MasterViewController: UIViewController {
     @IBOutlet weak var swipeImageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var betterSegmentedControl: BetterSegmentedControl!
     @IBOutlet weak var collectionViewYConstraint: NSLayoutConstraint!
-    @IBOutlet weak var segmentedControlYConstraint: NSLayoutConstraint!
     @IBOutlet weak var betterSegmentedControlYConstraint: NSLayoutConstraint!
 
     var imageCache = [String: UIImage?]()
@@ -57,7 +55,6 @@ class MasterViewController: UIViewController {
 
     @objc func willEnterForeground() {
         nowPlaying = true
-        segmentedControl.selectedSegmentIndex = 0
         loadMovies(into: &nowPlayingMovies)
         if self.movies.count > 0 {
             collectionView.scrollToItem(
