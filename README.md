@@ -15,6 +15,5 @@ If you'd like to poke around the code a bit you're welcome to, but you'll need t
 ## Contact Info:
 - Email: cary@cmillerco.com
 - LinkedIn: [carymiller](https://www.linkedin.com/in/carymiller/)
-- Twitter: [@carycodes](https://twitter.com/carycodes)
 
 # Thanks for stopping by!
